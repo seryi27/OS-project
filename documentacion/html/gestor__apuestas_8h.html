@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Práctica1SOper: Referencia del Archivo gestor_apuestas.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Práctica1SOper
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funciones</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo gestor_apuestas.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>En este archivo .h se declaran todas las funciones que tienen que ver con gestionar las apuestas llegadas desde los procesos apostador. Incluyen el <a class="el" href="gestor__apuestas_8h.html#a56c90ca40de5974953135376d5236ccf" title="proceso que se encarga de tratar las apuestas recibidas. Para ello crea n_vent hilos que reciben mens...">proceso_gestor_apuestas()</a>, que es el más general y que basicamente añade las zonas de memoria compartida y genera hilos ventanilla para que gestionen las apuestas, el <a class="el" href="gestor__apuestas_8h.html#af1bfe5100095244e285190aa899c2a32">hilo_ventanilla()</a>, que recibe mensajes de apuestas y realiza las operaciones neccesarias para almacenar esa informacion y para actualizar las cotizacciones de los caballos, y la funcion guardar_apuesta, que almacena en un archivo .txt un historial con todas las apuestas realizadas para que luego se imprima esa informacion mediante el proceso monitor al finalizar la carrera.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;pthread.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Dependencia gráfica adjunta para gestor_apuestas.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="gestor__apuestas_8h__incl.png" border="0" usemap="#gestor__apuestas_8h" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:</div>
+<div class="dyncontent">
+<div class="center"><img src="gestor__apuestas_8h__dep__incl.png" border="0" usemap="#gestor__apuestas_8hdep" alt=""/></div>
+<!-- MAP 1 -->
+</div>
+</div>
+<p><a href="gestor__apuestas_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a56c90ca40de5974953135376d5236ccf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestor__apuestas_8h.html#a56c90ca40de5974953135376d5236ccf">proceso_gestor_apuestas</a> (int n_cab, int n_vent, int n_apost, int msgid)</td></tr>
+<tr class="memdesc:a56c90ca40de5974953135376d5236ccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">proceso que se encarga de tratar las apuestas recibidas. Para ello crea n_vent hilos que reciben mensajes desde apostador y tratan con dicha informacion, almacenando en un archivo historial cada una de las apuestas con toda la informacion relevante, actualizando la cotizacion de los caballos y almacenando en una matriz apostador cuanto ganara cada uno de los apostadores si gana cada uno de los caballos. Una vez comenzada la carrera deja de recibir apuestas y envia a monitor la informacion que ha ido almacenando para que, una vez finalizada la carrera, la muestre por pantalla.  <a href="#a56c90ca40de5974953135376d5236ccf">Más...</a><br /></td></tr>
+<tr class="separator:a56c90ca40de5974953135376d5236ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1bfe5100095244e285190aa899c2a32"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestor__apuestas_8h.html#af1bfe5100095244e285190aa899c2a32">hilo_ventanilla</a> (void *arg)</td></tr>
+<tr class="separator:af1bfe5100095244e285190aa899c2a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8698c66708ec74021f102a4c0e9049df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestor__apuestas_8h.html#a8698c66708ec74021f102a4c0e9049df">guardar_apuesta</a> (int apostador, int ventanilla, int caballo, double cotizacion_caballo, double apuesta)</td></tr>
+<tr class="memdesc:a8698c66708ec74021f102a4c0e9049df"><td class="mdescLeft">&#160;</td><td class="mdescRight">esta funcion se encarga de almacenar en un archivo historial cada una de las apuestas realizadas en los momentos previos a la ejecucion de la carrera. Esta informacion sera usada al final por el monitor.  <a href="#a8698c66708ec74021f102a4c0e9049df">Más...</a><br /></td></tr>
+<tr class="separator:a8698c66708ec74021f102a4c0e9049df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d57de20ecaa222fcf3ef6df9deb9688"><td class="memItemLeft" align="right" valign="top"><a id="a5d57de20ecaa222fcf3ef6df9deb9688"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>manejador_gestor_terminar</b> (int sig)</td></tr>
+<tr class="separator:a5d57de20ecaa222fcf3ef6df9deb9688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>En este archivo .h se declaran todas las funciones que tienen que ver con gestionar las apuestas llegadas desde los procesos apostador. Incluyen el <a class="el" href="gestor__apuestas_8h.html#a56c90ca40de5974953135376d5236ccf" title="proceso que se encarga de tratar las apuestas recibidas. Para ello crea n_vent hilos que reciben mens...">proceso_gestor_apuestas()</a>, que es el más general y que basicamente añade las zonas de memoria compartida y genera hilos ventanilla para que gestionen las apuestas, el <a class="el" href="gestor__apuestas_8h.html#af1bfe5100095244e285190aa899c2a32">hilo_ventanilla()</a>, que recibe mensajes de apuestas y realiza las operaciones neccesarias para almacenar esa informacion y para actualizar las cotizacciones de los caballos, y la funcion guardar_apuesta, que almacena en un archivo .txt un historial con todas las apuestas realizadas para que luego se imprima esa informacion mediante el proceso monitor al finalizar la carrera. </p>
+<dl class="section author"><dt>Autor</dt><dd>Miguel Baquedano <a href="#" onclick="location.href='mai'+'lto:'+'mig'+'ue'+'l.b'+'aq'+'ued'+'an'+'o@e'+'st'+'udi'+'an'+'te.'+'ua'+'m.e'+'s'; return false;">migue<span style="display: none;">.nosp@m.</span>l.ba<span style="display: none;">.nosp@m.</span>queda<span style="display: none;">.nosp@m.</span>no@e<span style="display: none;">.nosp@m.</span>studi<span style="display: none;">.nosp@m.</span>ante<span style="display: none;">.nosp@m.</span>.uam.<span style="display: none;">.nosp@m.</span>es</a> </dd>
+<dd>
+Sergio Cordero <a href="#" onclick="location.href='mai'+'lto:'+'ser'+'gi'+'o.c'+'or'+'der'+'o@'+'est'+'ud'+'ian'+'te'+'.ua'+'m.'+'es'; return false;">sergi<span style="display: none;">.nosp@m.</span>o.co<span style="display: none;">.nosp@m.</span>rdero<span style="display: none;">.nosp@m.</span>@est<span style="display: none;">.nosp@m.</span>udian<span style="display: none;">.nosp@m.</span>te.u<span style="display: none;">.nosp@m.</span>am.es</a> </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>05-05-2018 </dd></dl>
+</div><h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a8698c66708ec74021f102a4c0e9049df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8698c66708ec74021f102a4c0e9049df">&#9670;&nbsp;</a></span>guardar_apuesta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int guardar_apuesta </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>apostador</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ventanilla</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>caballo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>cotizacion_caballo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>apuesta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>esta funcion se encarga de almacenar en un archivo historial cada una de las apuestas realizadas en los momentos previos a la ejecucion de la carrera. Esta informacion sera usada al final por el monitor. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">apostador</td><td>el apostador que ha realizado dicha apuesta </td></tr>
+    <tr><td class="paramname">ventanilla</td><td>la ventanilla que ha procesado la apuesta </td></tr>
+    <tr><td class="paramname">caballo</td><td>caballo al que se ha apostado </td></tr>
+    <tr><td class="paramname">cotizacion_caballo</td><td>la cotizacion del caballo en el momento de la apuesta </td></tr>
+    <tr><td class="paramname">apuesta</td><td>cantidad de dinero apostado </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>1 o -1 en funcion de si ejecuta correcta o incorrectamente </dd></dl>
+
+</div>
+</div>
+<a id="af1bfe5100095244e285190aa899c2a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1bfe5100095244e285190aa899c2a32">&#9670;&nbsp;</a></span>hilo_ventanilla()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* hilo_ventanilla </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg</td><td>puntero a void que contiene un puntero a una estructura argumentos. Esta estructura guarda todos los parametros necesarios para la correcta ejecucion del hilo. Ver <a class="el" href="estructuras_8h.html" title="En este archivo .h se declaran estructuras varias usadas a lo largo del programa de forma recurrente...">estructuras.h</a> para mas informacion </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>es vacio puesto que aunque sea necesario indicar void * (por ser funcion para hilo) no queremos devolver nada </dd></dl>
+
+</div>
+</div>
+<a id="a56c90ca40de5974953135376d5236ccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56c90ca40de5974953135376d5236ccf">&#9670;&nbsp;</a></span>proceso_gestor_apuestas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void proceso_gestor_apuestas </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n_cab</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n_vent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n_apost</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>msgid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>proceso que se encarga de tratar las apuestas recibidas. Para ello crea n_vent hilos que reciben mensajes desde apostador y tratan con dicha informacion, almacenando en un archivo historial cada una de las apuestas con toda la informacion relevante, actualizando la cotizacion de los caballos y almacenando en una matriz apostador cuanto ganara cada uno de los apostadores si gana cada uno de los caballos. Una vez comenzada la carrera deja de recibir apuestas y envia a monitor la informacion que ha ido almacenando para que, una vez finalizada la carrera, la muestre por pantalla. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n_cab</td><td>entero que representa el numero de caballos que disputan la carrera. </td></tr>
+    <tr><td class="paramname">n_vent</td><td>entero que representa el numero de ventanillas que existen para atender a las apuestas generadas por los procesos apostador </td></tr>
+    <tr><td class="paramname">n_apost</td><td>entero que representa el numero de apostadores existentes para esta carrera </td></tr>
+    <tr><td class="paramname">msgid</td><td>entero que identifica la cola de mensajes usada por los hilos ventanilla </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Sábado, 26 de Octubre de 2019 01:57:49 para Práctica1SOper por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

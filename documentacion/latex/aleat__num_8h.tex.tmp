@@ -1,0 +1,57 @@
+\hypertarget{aleat__num_8h}{}\section{Referencia del Archivo aleat\+\_\+num.\+h}
+\label{aleat__num_8h}\index{aleat\+\_\+num.\+h@{aleat\+\_\+num.\+h}}
+
+
+En este archivo .h se declara la funcion \hyperlink{aleat__num_8h_a423be02d237888f767b6d107096c10f4}{aleat\+\_\+num()}, que usaremos cada vez que necesitemos obtener algun numero aleatorio.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Dependencia gráfica adjunta para aleat\+\_\+num.\+h\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{aleat__num_8h_a423be02d237888f767b6d107096c10f4}{aleat\+\_\+num} (int inf, int sup)
+\begin{DoxyCompactList}\small\item\em funcion que dados dos enteros genera un entero aleatorio entre estas cotas \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+En este archivo .h se declara la funcion \hyperlink{aleat__num_8h_a423be02d237888f767b6d107096c10f4}{aleat\+\_\+num()}, que usaremos cada vez que necesitemos obtener algun numero aleatorio. 
+
+\begin{DoxyAuthor}{Autor}
+Miguel Baquedano \href{mailto:miguel.baquedano@estudiante.uam.es}{\tt miguel.\+baquedano@estudiante.\+uam.\+es} 
+
+Sergio Cordero \href{mailto:sergio.cordero@estudiante.uam.es}{\tt sergio.\+cordero@estudiante.\+uam.\+es} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+02-\/04-\/2018 
+\end{DoxyDate}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{aleat__num_8h_a423be02d237888f767b6d107096c10f4}\label{aleat__num_8h_a423be02d237888f767b6d107096c10f4}} 
+\index{aleat\+\_\+num.\+h@{aleat\+\_\+num.\+h}!aleat\+\_\+num@{aleat\+\_\+num}}
+\index{aleat\+\_\+num@{aleat\+\_\+num}!aleat\+\_\+num.\+h@{aleat\+\_\+num.\+h}}
+\subsubsection{\texorpdfstring{aleat\+\_\+num()}{aleat\_num()}}
+{\footnotesize\ttfamily int aleat\+\_\+num (\begin{DoxyParamCaption}\item[{int}]{inf,  }\item[{int}]{sup }\end{DoxyParamCaption})}
+
+
+
+funcion que dados dos enteros genera un entero aleatorio entre estas cotas 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em inf} & entero que representa la cota inferior para el entero aleatorio a generar \\
+\hline
+{\em sup} & entero que representa la cota superior para el entero aleatorio a generar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+devuelve el entero generado aleatoriamente. 
+\end{DoxyReturn}

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Práctica1SOper: Fichero Fuente estructuras.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Práctica1SOper
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">estructuras.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="estructuras_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef ESTRUCTURAS_H</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define ESTRUCTURAS_H</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/*estructura que guarda la informacion de la carrera*/</span></div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structinfo__carrera.html">   22</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">int</span> distancia;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">int</span> avance;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">int</span> posiciones;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}<a class="code" href="structinfo__carrera.html">info_carrera</a>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/*estructura que guarda las flags de la carrera*/</span></div><div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structflags__carrera.html">   29</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">int</span> carrera_iniciada;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">int</span> carrera_terminada;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}<a class="code" href="structflags__carrera.html">flags_carrera</a>;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * Estructura que guarda el dinero que recibe cada apostador en caso de que</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * gane el caballo apostado.</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structinfo__apuestas.html">   38</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">double</span> matriz[100][10];<span class="comment">//Maximo 100 apostadores y 10 caballos</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="structganadores.html">ganadores</a>[10];</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">double</span> restante[100];<span class="comment">//dinero con el que ha concluido la previa de la carrera cada apostador</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}<a class="code" href="structinfo__apuestas.html">info_apuestas</a>;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/* estructura que recibe un hilo ventanilla  usado en gestor_apuestas*/</span></div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="struct__argumentos.html">   45</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct__argumentos.html">_argumentos</a>{</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">int</span> msgid;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">double</span> * cotizacion_caballo; <span class="comment">// array con la cotizacion de cada caballo</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="structinfo__apuestas.html">info_apuestas</a> *apuestas; <span class="comment">// matriz que relaciona cada apostador con el dinero apostado a cada caballo</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">double</span> *total_apostado; <span class="comment">// total de dinero apostado en la carrera (suma de las apuestas a cada caballo)</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">double</span> *caballos; <span class="comment">// array con el total de dinero apostado a cada caballo</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">int</span> *ventanilla; <span class="comment">// identifica cada ventanilla de forma unica</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="structflags__carrera.html">flags_carrera</a> *flags; <span class="comment">// frag que cambia de valor al terminar el tiempo de apuestas para avisar de que comienza la carrera</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}<a class="code" href="struct__argumentos.html">argumentos</a>;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="struct__argumentos_html"><div class="ttname"><a href="struct__argumentos.html">_argumentos</a></div><div class="ttdef"><b>Definition:</b> estructuras.h:45</div></div>
+<div class="ttc" id="structinfo__carrera_html"><div class="ttname"><a href="structinfo__carrera.html">info_carrera</a></div><div class="ttdef"><b>Definition:</b> estructuras.h:22</div></div>
+<div class="ttc" id="structinfo__apuestas_html"><div class="ttname"><a href="structinfo__apuestas.html">info_apuestas</a></div><div class="ttdef"><b>Definition:</b> estructuras.h:38</div></div>
+<div class="ttc" id="structflags__carrera_html"><div class="ttname"><a href="structflags__carrera.html">flags_carrera</a></div><div class="ttdef"><b>Definition:</b> estructuras.h:29</div></div>
+<div class="ttc" id="structganadores_html"><div class="ttname"><a href="structganadores.html">ganadores</a></div><div class="ttdef"><b>Definition:</b> monitor.h:31</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Sábado, 26 de Octubre de 2019 01:57:48 para Práctica1SOper por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

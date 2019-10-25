@@ -1,0 +1,126 @@
+\hypertarget{monitor_8h}{}\section{Referencia del Archivo monitor.\+h}
+\label{monitor_8h}\index{monitor.\+h@{monitor.\+h}}
+
+
+En este archivo .h se declaran todas las funciones relacionadas con el monitor de la carrera. Incluye una funcion principal \hyperlink{monitor_8h_a3cb1bafc7468292200262cebb1bdbc37}{proceso\+\_\+monitor()} que organiza temporalmente las llamadas a las otras funciones de monitor. Tambien incluye una funcion para cada etapa de la carrera (\hyperlink{monitor_8h_ab8cef6bd968b5f5abe119e64f2801815}{monitor\+\_\+previa()}, que imprime el tiempo restante y las cotizaciones actuales de los caballos, \hyperlink{monitor_8h_a811a8247b498e49c0d5f4e18068a4ffe}{monitor\+\_\+carrera()}, que va imprimiendo las posiciones de cada caballo en cada ronda de la carrera y \hyperlink{monitor_8h_a417bd4a1236f8be02cd7ef58176eb242}{monitor\+\_\+postcarrera()}, que muestra las posiciones finales de los caballos y los apostadores que mas han ganado). Finalmente incluye \hyperlink{monitor_8h_a52d83da67e4eba99b5ecf4f11f22f118}{report\+\_\+completo()}, una funcion llamada antes de terminar el programa para mostrar por pantalla un informe completo de toda la informacion relevante de la carrera.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Dependencia gráfica adjunta para monitor.\+h\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\subsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structresultado__caballo}{resultado\+\_\+caballo}
+\item 
+struct \hyperlink{structganadores}{ganadores}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{monitor_8h_a3cb1bafc7468292200262cebb1bdbc37}\label{monitor_8h_a3cb1bafc7468292200262cebb1bdbc37}} 
+void \hyperlink{monitor_8h_a3cb1bafc7468292200262cebb1bdbc37}{proceso\+\_\+monitor} ()
+\begin{DoxyCompactList}\small\item\em funcion principal del monitor. Simplemente ejecuta por orden las funciones siguientes. Comienza ejecutando \hyperlink{monitor_8h_ab8cef6bd968b5f5abe119e64f2801815}{monitor\+\_\+previa()} hasta que comienza la carrera. Durante la carrera espera por las señales que recibe de carrera para ir imprimiendo las posiciones de los caballos a traves de la funcion manejador \hyperlink{monitor_8h_a811a8247b498e49c0d5f4e18068a4ffe}{monitor\+\_\+carrera()}. Una vez finalizada muestra los resultados de la carrera con \hyperlink{monitor_8h_a417bd4a1236f8be02cd7ef58176eb242}{monitor\+\_\+postcarrera()} y, finalmente, justo antes de acabar utiliza \hyperlink{monitor_8h_a52d83da67e4eba99b5ecf4f11f22f118}{report\+\_\+completo()} para mostrar toda la informacion de la carrera de forma detallada. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{monitor_8h_ab8cef6bd968b5f5abe119e64f2801815}\label{monitor_8h_ab8cef6bd968b5f5abe119e64f2801815}} 
+int \hyperlink{monitor_8h_ab8cef6bd968b5f5abe119e64f2801815}{monitor\+\_\+previa} ()
+\begin{DoxyCompactList}\small\item\em Utiliza memoria recibida para acceder a las cotizaciones de cada caballo y las imprime cada segundo junto con un contador del tiempo restante para empezar. \end{DoxyCompactList}\item 
+void \hyperlink{monitor_8h_a811a8247b498e49c0d5f4e18068a4ffe}{monitor\+\_\+carrera} (int sig)
+\begin{DoxyCompactList}\small\item\em funcion manejador de señales que es ejecutada al recibir señales desde el proceso carrera. De forma organizada gracias a usar señales imprime en cada ronda la distancia total recorrida por cada caballo y la distancia recorrida en dicha ronda. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{monitor_8h_a417bd4a1236f8be02cd7ef58176eb242}\label{monitor_8h_a417bd4a1236f8be02cd7ef58176eb242}} 
+void \hyperlink{monitor_8h_a417bd4a1236f8be02cd7ef58176eb242}{monitor\+\_\+postcarrera} ()
+\begin{DoxyCompactList}\small\item\em Muestra los resultados de la carrera y de las apuestas (los caballos ordenados por posicion final y los 10 apostadores que mas dinero han ganado). Se ejecuta una vez finalizada la carrera. \end{DoxyCompactList}\item 
+void \hyperlink{monitor_8h_a52d83da67e4eba99b5ecf4f11f22f118}{report\+\_\+completo} (int sig)
+\begin{DoxyCompactList}\small\item\em funcion manejador que se ejecuta justo antes de terminar la ejecucion del programa y que imprime un informe completo de la carrera. Este informe incluye un historial de todas las apuestas por orden de llegada al sistema, el resultado de la carrera (los caballos organizados por distancia recorrida en orden descendente) y el resultado de las apuestas de cada apostador. \end{DoxyCompactList}\item 
+void \hyperlink{monitor_8h_a2d2a7d2a12173bdf7ebb62ae0fbf50f6}{ordenar\+\_\+caballos} (\hyperlink{structinfo__carrera}{info\+\_\+carrera} $\ast$carrera, \hyperlink{structresultado__caballo}{resultado\+\_\+caballo} $\ast$resultado)
+\begin{DoxyCompactList}\small\item\em funcion que devuelve en resultado el orden de finalizacion de los caballos en orden descendente (el primero se encuentra al final del array). \end{DoxyCompactList}\item 
+void \hyperlink{monitor_8h_ab944f6c4e3b88464c9e9cf1253e5a2f9}{ordenar\+\_\+apostadores} (\hyperlink{structinfo__apuestas}{info\+\_\+apuestas} $\ast$apuestas, \hyperlink{structganadores}{ganadores} $\ast$apostadores\+\_\+ganadores)
+\begin{DoxyCompactList}\small\item\em funcion que utilizando la memoria compartida apuestas guarda en apostadores\+\_\+ganadores los apostadores ordenados por ganancias en orden ascendente (los que mas ganan van los ultimos) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{monitor_8h_ad070c3c53065c891e52a402957182744}\label{monitor_8h_ad070c3c53065c891e52a402957182744}} 
+void {\bfseries informacion\+\_\+apostadores} (\hyperlink{structinfo__apuestas}{info\+\_\+apuestas} $\ast$apuestas, \hyperlink{structganadores}{ganadores} $\ast$apostadores\+\_\+ganadores)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+En este archivo .h se declaran todas las funciones relacionadas con el monitor de la carrera. Incluye una funcion principal \hyperlink{monitor_8h_a3cb1bafc7468292200262cebb1bdbc37}{proceso\+\_\+monitor()} que organiza temporalmente las llamadas a las otras funciones de monitor. Tambien incluye una funcion para cada etapa de la carrera (\hyperlink{monitor_8h_ab8cef6bd968b5f5abe119e64f2801815}{monitor\+\_\+previa()}, que imprime el tiempo restante y las cotizaciones actuales de los caballos, \hyperlink{monitor_8h_a811a8247b498e49c0d5f4e18068a4ffe}{monitor\+\_\+carrera()}, que va imprimiendo las posiciones de cada caballo en cada ronda de la carrera y \hyperlink{monitor_8h_a417bd4a1236f8be02cd7ef58176eb242}{monitor\+\_\+postcarrera()}, que muestra las posiciones finales de los caballos y los apostadores que mas han ganado). Finalmente incluye \hyperlink{monitor_8h_a52d83da67e4eba99b5ecf4f11f22f118}{report\+\_\+completo()}, una funcion llamada antes de terminar el programa para mostrar por pantalla un informe completo de toda la informacion relevante de la carrera. 
+
+\begin{DoxyAuthor}{Autor}
+Miguel Baquedano \href{mailto:miguel.baquedano@estudiante.uam.es}{\tt miguel.\+baquedano@estudiante.\+uam.\+es} 
+
+Sergio Cordero \href{mailto:sergio.cordero@estudiante.uam.es}{\tt sergio.\+cordero@estudiante.\+uam.\+es} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+02-\/04-\/2018 
+\end{DoxyDate}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{monitor_8h_a811a8247b498e49c0d5f4e18068a4ffe}\label{monitor_8h_a811a8247b498e49c0d5f4e18068a4ffe}} 
+\index{monitor.\+h@{monitor.\+h}!monitor\+\_\+carrera@{monitor\+\_\+carrera}}
+\index{monitor\+\_\+carrera@{monitor\+\_\+carrera}!monitor.\+h@{monitor.\+h}}
+\subsubsection{\texorpdfstring{monitor\+\_\+carrera()}{monitor\_carrera()}}
+{\footnotesize\ttfamily void monitor\+\_\+carrera (\begin{DoxyParamCaption}\item[{int}]{sig }\end{DoxyParamCaption})}
+
+
+
+funcion manejador de señales que es ejecutada al recibir señales desde el proceso carrera. De forma organizada gracias a usar señales imprime en cada ronda la distancia total recorrida por cada caballo y la distancia recorrida en dicha ronda. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sig} & entero que representa la señal recibida que activa dicho manejador. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{monitor_8h_ab944f6c4e3b88464c9e9cf1253e5a2f9}\label{monitor_8h_ab944f6c4e3b88464c9e9cf1253e5a2f9}} 
+\index{monitor.\+h@{monitor.\+h}!ordenar\+\_\+apostadores@{ordenar\+\_\+apostadores}}
+\index{ordenar\+\_\+apostadores@{ordenar\+\_\+apostadores}!monitor.\+h@{monitor.\+h}}
+\subsubsection{\texorpdfstring{ordenar\+\_\+apostadores()}{ordenar\_apostadores()}}
+{\footnotesize\ttfamily void ordenar\+\_\+apostadores (\begin{DoxyParamCaption}\item[{\hyperlink{structinfo__apuestas}{info\+\_\+apuestas} $\ast$}]{apuestas,  }\item[{\hyperlink{structganadores}{ganadores} $\ast$}]{apostadores\+\_\+ganadores }\end{DoxyParamCaption})}
+
+
+
+funcion que utilizando la memoria compartida apuestas guarda en apostadores\+\_\+ganadores los apostadores ordenados por ganancias en orden ascendente (los que mas ganan van los ultimos) 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em apuestas} & array de estructuras a \hyperlink{structinfo__apuestas}{info\+\_\+apuestas} que usaremos para acceder a la matriz de apuestas y al array de ganadores \\
+\hline
+{\em apostadores\+\_\+ganadores} & array de estructuras a ganadores donde guardamos los apostadores ordenados por cuanto dinero han ganado. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{monitor_8h_a2d2a7d2a12173bdf7ebb62ae0fbf50f6}\label{monitor_8h_a2d2a7d2a12173bdf7ebb62ae0fbf50f6}} 
+\index{monitor.\+h@{monitor.\+h}!ordenar\+\_\+caballos@{ordenar\+\_\+caballos}}
+\index{ordenar\+\_\+caballos@{ordenar\+\_\+caballos}!monitor.\+h@{monitor.\+h}}
+\subsubsection{\texorpdfstring{ordenar\+\_\+caballos()}{ordenar\_caballos()}}
+{\footnotesize\ttfamily void ordenar\+\_\+caballos (\begin{DoxyParamCaption}\item[{\hyperlink{structinfo__carrera}{info\+\_\+carrera} $\ast$}]{carrera,  }\item[{\hyperlink{structresultado__caballo}{resultado\+\_\+caballo} $\ast$}]{resultado }\end{DoxyParamCaption})}
+
+
+
+funcion que devuelve en resultado el orden de finalizacion de los caballos en orden descendente (el primero se encuentra al final del array). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em carrera} & array de estructuras \hyperlink{structinfo__carrera}{info\+\_\+carrera} que usaremos para acceder a la distancia recorrida por cada caballo \\
+\hline
+{\em resultado} & array de estructuras \hyperlink{structresultado__caballo}{resultado\+\_\+caballo} (que guarda cada caballo junto con la distancia total) que se devolvera ordenado por distancia. que ha recorrido. Sera \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{monitor_8h_a52d83da67e4eba99b5ecf4f11f22f118}\label{monitor_8h_a52d83da67e4eba99b5ecf4f11f22f118}} 
+\index{monitor.\+h@{monitor.\+h}!report\+\_\+completo@{report\+\_\+completo}}
+\index{report\+\_\+completo@{report\+\_\+completo}!monitor.\+h@{monitor.\+h}}
+\subsubsection{\texorpdfstring{report\+\_\+completo()}{report\_completo()}}
+{\footnotesize\ttfamily void report\+\_\+completo (\begin{DoxyParamCaption}\item[{int}]{sig }\end{DoxyParamCaption})}
+
+
+
+funcion manejador que se ejecuta justo antes de terminar la ejecucion del programa y que imprime un informe completo de la carrera. Este informe incluye un historial de todas las apuestas por orden de llegada al sistema, el resultado de la carrera (los caballos organizados por distancia recorrida en orden descendente) y el resultado de las apuestas de cada apostador. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sig} & entero que indica la señal que ha producido la ejecucion de este manejador \\
+\hline
+\end{DoxyParams}

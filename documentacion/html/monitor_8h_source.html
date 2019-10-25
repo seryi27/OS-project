@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Práctica1SOper: Fichero Fuente monitor.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Práctica1SOper
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">monitor.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="monitor_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef MONITOR_H</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define MONITOR_H</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/* estructura usada por monitor para imprimir el orden de terminacion de los caballos. */</span></div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structresultado__caballo.html">   26</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">int</span> caballo; <span class="comment">//identificador del caballo</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">int</span> distancia; <span class="comment">//distancia recorrida por dicho caballo</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}<a class="code" href="structresultado__caballo.html">resultado_caballo</a>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structganadores.html">   31</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">int</span> apostador; <span class="comment">//identificador del apostador</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">double</span> ganancias; <span class="comment">//cuanto ha ganado con la carrera</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}<a class="code" href="structganadores.html">ganadores</a>;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> <a class="code" href="monitor_8h.html#a3cb1bafc7468292200262cebb1bdbc37">proceso_monitor</a>();</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">int</span> <a class="code" href="monitor_8h.html#ab8cef6bd968b5f5abe119e64f2801815">monitor_previa</a>();</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">void</span> <a class="code" href="monitor_8h.html#a811a8247b498e49c0d5f4e18068a4ffe">monitor_carrera</a>(<span class="keywordtype">int</span> sig);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> <a class="code" href="monitor_8h.html#a417bd4a1236f8be02cd7ef58176eb242">monitor_postcarrera</a>();</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> <a class="code" href="monitor_8h.html#a52d83da67e4eba99b5ecf4f11f22f118">report_completo</a>(<span class="keywordtype">int</span> sig);</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">void</span> <a class="code" href="monitor_8h.html#a2d2a7d2a12173bdf7ebb62ae0fbf50f6">ordenar_caballos</a>(<a class="code" href="structinfo__carrera.html">info_carrera</a> *carrera, <a class="code" href="structresultado__caballo.html">resultado_caballo</a> *resultado);</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keywordtype">void</span> <a class="code" href="monitor_8h.html#ab944f6c4e3b88464c9e9cf1253e5a2f9">ordenar_apostadores</a>(<a class="code" href="structinfo__apuestas.html">info_apuestas</a> *apuestas, <a class="code" href="structganadores.html">ganadores</a> *apostadores_ganadores);</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">void</span> informacion_apostadores(<a class="code" href="structinfo__apuestas.html">info_apuestas</a> *apuestas, <a class="code" href="structganadores.html">ganadores</a> *apostadores_ganadores);</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="monitor_8h_html_a2d2a7d2a12173bdf7ebb62ae0fbf50f6"><div class="ttname"><a href="monitor_8h.html#a2d2a7d2a12173bdf7ebb62ae0fbf50f6">ordenar_caballos</a></div><div class="ttdeci">void ordenar_caballos(info_carrera *carrera, resultado_caballo *resultado)</div><div class="ttdoc">funcion que devuelve en resultado el orden de finalizacion de los caballos en orden descendente (el p...</div><div class="ttdef"><b>Definition:</b> monitor.c:259</div></div>
+<div class="ttc" id="structresultado__caballo_html"><div class="ttname"><a href="structresultado__caballo.html">resultado_caballo</a></div><div class="ttdef"><b>Definition:</b> monitor.h:26</div></div>
+<div class="ttc" id="monitor_8h_html_a811a8247b498e49c0d5f4e18068a4ffe"><div class="ttname"><a href="monitor_8h.html#a811a8247b498e49c0d5f4e18068a4ffe">monitor_carrera</a></div><div class="ttdeci">void monitor_carrera(int sig)</div><div class="ttdoc">funcion manejador de señales que es ejecutada al recibir señales desde el proceso carrera...</div><div class="ttdef"><b>Definition:</b> monitor.c:118</div></div>
+<div class="ttc" id="monitor_8h_html_a52d83da67e4eba99b5ecf4f11f22f118"><div class="ttname"><a href="monitor_8h.html#a52d83da67e4eba99b5ecf4f11f22f118">report_completo</a></div><div class="ttdeci">void report_completo(int sig)</div><div class="ttdoc">funcion manejador que se ejecuta justo antes de terminar la ejecucion del programa y que imprime un i...</div><div class="ttdef"><b>Definition:</b> monitor.c:193</div></div>
+<div class="ttc" id="monitor_8h_html_a3cb1bafc7468292200262cebb1bdbc37"><div class="ttname"><a href="monitor_8h.html#a3cb1bafc7468292200262cebb1bdbc37">proceso_monitor</a></div><div class="ttdeci">void proceso_monitor()</div><div class="ttdoc">funcion principal del monitor. Simplemente ejecuta por orden las funciones siguientes. Comienza ejecutando monitor_previa() hasta que comienza la carrera. Durante la carrera espera por las señales que recibe de carrera para ir imprimiendo las posiciones de los caballos a traves de la funcion manejador monitor_carrera(). Una vez finalizada muestra los resultados de la carrera con monitor_postcarrera() y, finalmente, justo antes de acabar utiliza report_completo() para mostrar toda la informacion de la carrera de forma detallada. </div><div class="ttdef"><b>Definition:</b> monitor.c:55</div></div>
+<div class="ttc" id="monitor_8h_html_a417bd4a1236f8be02cd7ef58176eb242"><div class="ttname"><a href="monitor_8h.html#a417bd4a1236f8be02cd7ef58176eb242">monitor_postcarrera</a></div><div class="ttdeci">void monitor_postcarrera()</div><div class="ttdoc">Muestra los resultados de la carrera y de las apuestas (los caballos ordenados por posicion final y l...</div><div class="ttdef"><b>Definition:</b> monitor.c:143</div></div>
+<div class="ttc" id="structinfo__carrera_html"><div class="ttname"><a href="structinfo__carrera.html">info_carrera</a></div><div class="ttdef"><b>Definition:</b> estructuras.h:22</div></div>
+<div class="ttc" id="structinfo__apuestas_html"><div class="ttname"><a href="structinfo__apuestas.html">info_apuestas</a></div><div class="ttdef"><b>Definition:</b> estructuras.h:38</div></div>
+<div class="ttc" id="monitor_8h_html_ab944f6c4e3b88464c9e9cf1253e5a2f9"><div class="ttname"><a href="monitor_8h.html#ab944f6c4e3b88464c9e9cf1253e5a2f9">ordenar_apostadores</a></div><div class="ttdeci">void ordenar_apostadores(info_apuestas *apuestas, ganadores *apostadores_ganadores)</div><div class="ttdoc">funcion que utilizando la memoria compartida apuestas guarda en apostadores_ganadores los apostadores...</div><div class="ttdef"><b>Definition:</b> monitor.c:279</div></div>
+<div class="ttc" id="monitor_8h_html_ab8cef6bd968b5f5abe119e64f2801815"><div class="ttname"><a href="monitor_8h.html#ab8cef6bd968b5f5abe119e64f2801815">monitor_previa</a></div><div class="ttdeci">int monitor_previa()</div><div class="ttdoc">Utiliza memoria recibida para acceder a las cotizaciones de cada caballo y las imprime cada segundo j...</div><div class="ttdef"><b>Definition:</b> monitor.c:89</div></div>
+<div class="ttc" id="structganadores_html"><div class="ttname"><a href="structganadores.html">ganadores</a></div><div class="ttdef"><b>Definition:</b> monitor.h:31</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Sábado, 26 de Octubre de 2019 01:57:48 para Práctica1SOper por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

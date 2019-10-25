@@ -1,0 +1,65 @@
+\hypertarget{semaforos_8c}{}\section{Referencia del Archivo semaforos.\+c}
+\label{semaforos_8c}\index{semaforos.\+c@{semaforos.\+c}}
+
+
+Este archivo \hyperlink{semaforos_8c}{semaforos.\+c} implementa las funciones declaradas en semáforos.\+h, las cuales facilitan el uso de semáforos, encapsulando las estructuras y funciones complejas que suponen el uso de semáforos y permitiendo un uso de semáforos más legible y simple.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ipc.\+h$>$}\newline
+{\ttfamily \#include $<$sys/sem.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$sys/shm.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Dependencia gráfica adjunta para semaforos.\+c\+:
+% FIG 0
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{semaforos_8c_a8fe83ac76edc595f6b98cd4a4127aed5}\label{semaforos_8c_a8fe83ac76edc595f6b98cd4a4127aed5}} 
+\#define {\bfseries E\+R\+R\+OR}~-\/1
+\item 
+\mbox{\Hypertarget{semaforos_8c_aba51915c87d64af47fb1cc59348961c9}\label{semaforos_8c_aba51915c87d64af47fb1cc59348961c9}} 
+\#define {\bfseries OK}~0
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{semaforos_8c_a4f8ddefc5fc5be82386357794cacd6e2}\label{semaforos_8c_a4f8ddefc5fc5be82386357794cacd6e2}} 
+int {\bfseries Inicializar\+\_\+\+Semaforo} (int semid, unsigned short $\ast$array, int size)
+\item 
+\mbox{\Hypertarget{semaforos_8c_a731339337960a681efa435a10f12c312}\label{semaforos_8c_a731339337960a681efa435a10f12c312}} 
+int {\bfseries Borrar\+\_\+\+Semaforo} (int semid)
+\item 
+\mbox{\Hypertarget{semaforos_8c_a16b16dd895b5f4cbe48f1ac8977e8b35}\label{semaforos_8c_a16b16dd895b5f4cbe48f1ac8977e8b35}} 
+int {\bfseries Crear\+\_\+\+Semaforo} (key\+\_\+t key, int size, int $\ast$semid)
+\item 
+\mbox{\Hypertarget{semaforos_8c_a883244cd3b83c42cda23687da1b63369}\label{semaforos_8c_a883244cd3b83c42cda23687da1b63369}} 
+int {\bfseries Down\+\_\+\+Semaforo} (int id, int num\+\_\+sem, int undo)
+\item 
+\mbox{\Hypertarget{semaforos_8c_ab375ebfc38acbdced46e062a689d5fad}\label{semaforos_8c_ab375ebfc38acbdced46e062a689d5fad}} 
+int {\bfseries Down\+Multiple\+\_\+\+Semaforo} (int id, int size, int undo, int $\ast$active)
+\item 
+\mbox{\Hypertarget{semaforos_8c_a2d5e735aecee4f493898b3d4ebab1a10}\label{semaforos_8c_a2d5e735aecee4f493898b3d4ebab1a10}} 
+int {\bfseries Up\+\_\+\+Semaforo} (int id, int num\+\_\+sem, int undo)
+\item 
+\mbox{\Hypertarget{semaforos_8c_a943759695f018d64a94b8a2c49308092}\label{semaforos_8c_a943759695f018d64a94b8a2c49308092}} 
+int {\bfseries Up\+Multiple\+\_\+\+Semaforo} (int id, int size, int undo, int $\ast$active)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Este archivo \hyperlink{semaforos_8c}{semaforos.\+c} implementa las funciones declaradas en semáforos.\+h, las cuales facilitan el uso de semáforos, encapsulando las estructuras y funciones complejas que suponen el uso de semáforos y permitiendo un uso de semáforos más legible y simple. 
+
+\begin{DoxyAuthor}{Autor}
+Miguel Baquedano \href{mailto:miguel.baquedano@estudiante.uam.es}{\tt miguel.\+baquedano@estudiante.\+uam.\+es} 
+
+Sergio Cordero \href{mailto:sergio.cordero@estudiante.uam.es}{\tt sergio.\+cordero@estudiante.\+uam.\+es} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+02-\/04-\/2018 
+\end{DoxyDate}

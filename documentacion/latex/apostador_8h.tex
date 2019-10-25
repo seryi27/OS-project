@@ -1,0 +1,75 @@
+\hypertarget{apostador_8h}{}\section{Referencia del Archivo apostador.\+h}
+\label{apostador_8h}\index{apostador.\+h@{apostador.\+h}}
+
+
+En este archivo .h se declara la funcion que simula a los apostadores realizando apuestas en la previa a la carrera.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Dependencia gráfica adjunta para apostador.\+h\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{apostador_8h_af065387dd2983f2eb0c83d878a9edac0}{proceso\+\_\+apostador} (int apostadores, int num\+\_\+caballos, int dinero\+\_\+total, int msgid)
+\begin{DoxyCompactList}\small\item\em funcion que genera un proceso hijo por cada apostador. Cada uno de ellos genera de forma aleatoria apuestas a los caballos mientras tengan dinero disponible. Una vez que comience la carrera no se aceptaran mas apuestas. \end{DoxyCompactList}\item 
+void \hyperlink{apostador_8h_a7f0321c41d1b58a86e9cc9dcbabaeaab}{manejador\+\_\+terminar} (int sig)
+\begin{DoxyCompactList}\small\item\em manejador de señales que espera una señal desde el proceso principal para cuando la carrera termine. Simplemente mata a todos los procesos apostador (sus hijos) y termina con E\+X\+I\+T\+\_\+\+S\+U\+C\+C\+E\+SS \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+En este archivo .h se declara la funcion que simula a los apostadores realizando apuestas en la previa a la carrera. 
+
+\begin{DoxyAuthor}{Autor}
+Miguel Baquedano \href{mailto:miguel.baquedano@estudiante.uam.es}{\tt miguel.\+baquedano@estudiante.\+uam.\+es} 
+
+Sergio Cordero \href{mailto:sergio.cordero@estudiante.uam.es}{\tt sergio.\+cordero@estudiante.\+uam.\+es} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+05-\/05-\/2018 
+\end{DoxyDate}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{apostador_8h_a7f0321c41d1b58a86e9cc9dcbabaeaab}\label{apostador_8h_a7f0321c41d1b58a86e9cc9dcbabaeaab}} 
+\index{apostador.\+h@{apostador.\+h}!manejador\+\_\+terminar@{manejador\+\_\+terminar}}
+\index{manejador\+\_\+terminar@{manejador\+\_\+terminar}!apostador.\+h@{apostador.\+h}}
+\subsubsection{\texorpdfstring{manejador\+\_\+terminar()}{manejador\_terminar()}}
+{\footnotesize\ttfamily void manejador\+\_\+terminar (\begin{DoxyParamCaption}\item[{int}]{sig }\end{DoxyParamCaption})}
+
+
+
+manejador de señales que espera una señal desde el proceso principal para cuando la carrera termine. Simplemente mata a todos los procesos apostador (sus hijos) y termina con E\+X\+I\+T\+\_\+\+S\+U\+C\+C\+E\+SS 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sig} & entero que identifica la señal que ha forzado la ejecucion de este manejador. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{apostador_8h_af065387dd2983f2eb0c83d878a9edac0}\label{apostador_8h_af065387dd2983f2eb0c83d878a9edac0}} 
+\index{apostador.\+h@{apostador.\+h}!proceso\+\_\+apostador@{proceso\+\_\+apostador}}
+\index{proceso\+\_\+apostador@{proceso\+\_\+apostador}!apostador.\+h@{apostador.\+h}}
+\subsubsection{\texorpdfstring{proceso\+\_\+apostador()}{proceso\_apostador()}}
+{\footnotesize\ttfamily void proceso\+\_\+apostador (\begin{DoxyParamCaption}\item[{int}]{apostadores,  }\item[{int}]{num\+\_\+caballos,  }\item[{int}]{dinero\+\_\+total,  }\item[{int}]{msgid }\end{DoxyParamCaption})}
+
+
+
+funcion que genera un proceso hijo por cada apostador. Cada uno de ellos genera de forma aleatoria apuestas a los caballos mientras tengan dinero disponible. Una vez que comience la carrera no se aceptaran mas apuestas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em apostadores} & entero que representa el numero total de apostadores que habra en la carrera. \\
+\hline
+{\em num\+\_\+caballos} & entero que representa el numero de caballos que participaran en la carrera \\
+\hline
+{\em dinero\+\_\+total} & entero que representa cuanto dinero tiene cada apostador para apostar en la carrera. \\
+\hline
+{\em msgid} & entero que identifica la cola de mensajes que usara el proceso apostador para comunicarse con las ventanillas del gestor de apuestas. \\
+\hline
+\end{DoxyParams}

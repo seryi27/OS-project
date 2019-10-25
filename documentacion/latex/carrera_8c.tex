@@ -1,0 +1,218 @@
+\hypertarget{carrera_8c}{}\section{Referencia del Archivo carrera.\+c}
+\label{carrera_8c}\index{carrera.\+c@{carrera.\+c}}
+
+
+Este es el archivo principal del programa. Contiene el main y las funciones principales de la ejecucion del mismo. Organiza las ejecuciones de los diversos procesos que actuan en la ejecucion del programa, ejecuta el proceso principal (la carrera propiamente dicha) y controla la terminacion de todos los procesos para que el programa termine de forma controlada.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ipc.\+h$>$}\newline
+{\ttfamily \#include $<$sys/sem.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$sys/shm.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$sys/msg.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}estructuras.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}assert.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}caballo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}aleat\+\_\+num.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}semaforos.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}monitor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gestor\+\_\+apuestas.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mensaje.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}memoria.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}apostador.\+h\char`\"{}}\newline
+Dependencia gráfica adjunta para carrera.\+c\+:
+% FIG 0
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{carrera_8c_a68c15c5fb7f7c6f707903e6a46ab0557}\label{carrera_8c_a68c15c5fb7f7c6f707903e6a46ab0557}} 
+\#define {\bfseries F\+I\+L\+E\+K\+EY}~\char`\"{}/bin/cat\char`\"{}
+\item 
+\mbox{\Hypertarget{carrera_8c_a8ae9d53f33f46cfcfcb9736e6351452a}\label{carrera_8c_a8ae9d53f33f46cfcfcb9736e6351452a}} 
+\#define {\bfseries K\+EY}~1304
+\item 
+\mbox{\Hypertarget{carrera_8c_ab0139008fdda107456f13f837872b410}\label{carrera_8c_ab0139008fdda107456f13f837872b410}} 
+\#define {\bfseries P\+A\+TH}~\char`\"{}historial.\+txt\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{carrera_8c_ab548cd3742b9a8aa22a847514af36fea}\label{carrera_8c_ab548cd3742b9a8aa22a847514af36fea}} 
+void {\bfseries fin\+\_\+carrera} (int sig)
+\item 
+\mbox{\Hypertarget{carrera_8c_a1b5ba3652d4ea6955ada5d71319fcb8d}\label{carrera_8c_a1b5ba3652d4ea6955ada5d71319fcb8d}} 
+void {\bfseries fin\+\_\+programa} (int sig)
+\item 
+\mbox{\Hypertarget{carrera_8c_a6a10b987e49c732e7af2647b5f202a42}\label{carrera_8c_a6a10b987e49c732e7af2647b5f202a42}} 
+void {\bfseries inicio\+\_\+carrera} (int sig)
+\item 
+void \hyperlink{carrera_8c_a832753956e7933906de7ce846c24a1c6}{ronda\+\_\+caballo} (int ronda, int pipe\+\_\+escritura, int pipe\+\_\+lectura, int num\+\_\+semaforo)
+\begin{DoxyCompactList}\small\item\em La funcion \hyperlink{carrera_8c_a832753956e7933906de7ce846c24a1c6}{ronda\+\_\+caballo()} simula una ronda de la carrera, generando una tirada y comunicandose con el proceso principal para que registre dicho avance y actualice las posiciones. \end{DoxyCompactList}\item 
+int \hyperlink{carrera_8c_a365922600e1bc8e96f3950d41d163914}{ronda\+\_\+principal} (int num\+\_\+caballos, int ronda, int $\ast$$\ast$pipe\+\_\+lectura, int $\ast$$\ast$pipe\+\_\+escritura, int $\ast$distancia\+\_\+recorrida, int long\+\_\+carrera)
+\begin{DoxyCompactList}\small\item\em la funcion \hyperlink{carrera_8c_a365922600e1bc8e96f3950d41d163914}{ronda\+\_\+principal()} simula una ronda del controlador de la carrera, recibiendo las tiradas de los caballos, actualizando sus posiciones y enviandoles de nuevo su posicion para la siguiente ronda. \end{DoxyCompactList}\item 
+void \hyperlink{carrera_8c_a6d980f59125ca72f46ca27b10a3825c3}{get\+\_\+posiciones} (int $\ast$distancia\+\_\+recorrida, int $\ast$posiciones, int num\+\_\+caballos)
+\begin{DoxyCompactList}\small\item\em funcion que dado el array de distancias recorridas almacena en posiciones U\+L\+T\+I\+MO M\+E\+D\+IO o P\+R\+I\+M\+E\+RO para indicar a cada caballo en que parte de la carrera se encuentra \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{carrera_8c_a414427533937a8979e22783183888e19}\label{carrera_8c_a414427533937a8979e22783183888e19}} 
+int {\bfseries crear\+\_\+semaforos} (int num\+\_\+caballos)
+\item 
+\mbox{\Hypertarget{carrera_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{carrera_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{carrera_8c_ae260e0a345689d47d879c905c24f7bdb}\label{carrera_8c_ae260e0a345689d47d879c905c24f7bdb}} 
+int {\bfseries sem\+\_\+id\+\_\+mutex1}
+\item 
+\mbox{\Hypertarget{carrera_8c_a6d62a8db549549409ab56a2e1272ed36}\label{carrera_8c_a6d62a8db549549409ab56a2e1272ed36}} 
+int {\bfseries sem\+\_\+id\+\_\+mutex2}
+\item 
+\mbox{\Hypertarget{carrera_8c_a9d142b95e39b9f3ccc223ad780f1c677}\label{carrera_8c_a9d142b95e39b9f3ccc223ad780f1c677}} 
+int {\bfseries sem\+\_\+id\+\_\+caballos}
+\item 
+\mbox{\Hypertarget{carrera_8c_a99471648bee8715391ce82ef5034f38d}\label{carrera_8c_a99471648bee8715391ce82ef5034f38d}} 
+int {\bfseries sem\+\_\+id\+\_\+info\+\_\+carrera}
+\item 
+\mbox{\Hypertarget{carrera_8c_a9de9817e5d7c846fd151de6a90e281e3}\label{carrera_8c_a9de9817e5d7c846fd151de6a90e281e3}} 
+int {\bfseries sem\+\_\+id\+\_\+mutex\+\_\+apuesta}
+\item 
+\mbox{\Hypertarget{carrera_8c_a3e4cb2b702a5e750bdddfdc8b732c980}\label{carrera_8c_a3e4cb2b702a5e750bdddfdc8b732c980}} 
+int $\ast$ {\bfseries active}
+\item 
+\mbox{\Hypertarget{carrera_8c_a59e3c6b7de336a8c2ea29343d0d99beb}\label{carrera_8c_a59e3c6b7de336a8c2ea29343d0d99beb}} 
+int {\bfseries num\+\_\+caballos}
+\item 
+\mbox{\Hypertarget{carrera_8c_aab3c85d32931a4736b046b353a4f7d24}\label{carrera_8c_aab3c85d32931a4736b046b353a4f7d24}} 
+int {\bfseries num\+\_\+apostadores}
+\item 
+\mbox{\Hypertarget{carrera_8c_a554bdf03ae4f8480bddb761bd7c03b53}\label{carrera_8c_a554bdf03ae4f8480bddb761bd7c03b53}} 
+int {\bfseries id\+\_\+zone}
+\item 
+\mbox{\Hypertarget{carrera_8c_a7f8474a9da1ca9401dba3eed31ebec53}\label{carrera_8c_a7f8474a9da1ca9401dba3eed31ebec53}} 
+int {\bfseries id\+\_\+zone\+\_\+carrera}
+\item 
+\mbox{\Hypertarget{carrera_8c_acfbafc882e4572d22b1ff62bc488cb86}\label{carrera_8c_acfbafc882e4572d22b1ff62bc488cb86}} 
+int {\bfseries id\+\_\+zone\+\_\+flags}
+\item 
+\mbox{\Hypertarget{carrera_8c_adc800a8e2e79d3199b41e46887d8c8dc}\label{carrera_8c_adc800a8e2e79d3199b41e46887d8c8dc}} 
+int {\bfseries id\+\_\+zone\+\_\+apuestas}
+\item 
+\mbox{\Hypertarget{carrera_8c_a77a9b46fb7c57dc60d5af1d06ba10562}\label{carrera_8c_a77a9b46fb7c57dc60d5af1d06ba10562}} 
+int {\bfseries pid\+\_\+caballos} \mbox{[}10\mbox{]}
+\item 
+\mbox{\Hypertarget{carrera_8c_aed37861b69193d37616cef4e9131fc35}\label{carrera_8c_aed37861b69193d37616cef4e9131fc35}} 
+int {\bfseries pid\+\_\+monitor}
+\item 
+\mbox{\Hypertarget{carrera_8c_a0a34cf30d287152688326e55fd3b3d4b}\label{carrera_8c_a0a34cf30d287152688326e55fd3b3d4b}} 
+int {\bfseries pid\+\_\+apostador}
+\item 
+\mbox{\Hypertarget{carrera_8c_a463ebb16baa95c01abebecc758d778a3}\label{carrera_8c_a463ebb16baa95c01abebecc758d778a3}} 
+int {\bfseries pid\+\_\+gestor}
+\item 
+\mbox{\Hypertarget{carrera_8c_a1711926ea1e49a9176f7e677b42b5c24}\label{carrera_8c_a1711926ea1e49a9176f7e677b42b5c24}} 
+int {\bfseries flag\+\_\+carrera} = 1
+\item 
+\mbox{\Hypertarget{carrera_8c_a1d5c175a99488a6896d8abd414488aba}\label{carrera_8c_a1d5c175a99488a6896d8abd414488aba}} 
+\hyperlink{structflags__carrera}{flags\+\_\+carrera} $\ast$ {\bfseries flags}
+\item 
+\mbox{\Hypertarget{carrera_8c_ab033a248088cd9cf85eec6cbd3befc8d}\label{carrera_8c_ab033a248088cd9cf85eec6cbd3befc8d}} 
+int {\bfseries dinero}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Este es el archivo principal del programa. Contiene el main y las funciones principales de la ejecucion del mismo. Organiza las ejecuciones de los diversos procesos que actuan en la ejecucion del programa, ejecuta el proceso principal (la carrera propiamente dicha) y controla la terminacion de todos los procesos para que el programa termine de forma controlada. 
+
+\begin{DoxyAuthor}{Autor}
+Miguel Baquedano \href{mailto:miguel.baquedano@estudiante.uam.es}{\tt miguel.\+baquedano@estudiante.\+uam.\+es} 
+
+Sergio Cordero \href{mailto:sergio.cordero@estudiante.uam.es}{\tt sergio.\+cordero@estudiante.\+uam.\+es} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+05-\/05-\/2018 
+\end{DoxyDate}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{carrera_8c_a6d980f59125ca72f46ca27b10a3825c3}\label{carrera_8c_a6d980f59125ca72f46ca27b10a3825c3}} 
+\index{carrera.\+c@{carrera.\+c}!get\+\_\+posiciones@{get\+\_\+posiciones}}
+\index{get\+\_\+posiciones@{get\+\_\+posiciones}!carrera.\+c@{carrera.\+c}}
+\subsubsection{\texorpdfstring{get\+\_\+posiciones()}{get\_posiciones()}}
+{\footnotesize\ttfamily void get\+\_\+posiciones (\begin{DoxyParamCaption}\item[{int $\ast$}]{distancia\+\_\+recorrida,  }\item[{int $\ast$}]{posiciones,  }\item[{int}]{num\+\_\+caballos }\end{DoxyParamCaption})}
+
+
+
+funcion que dado el array de distancias recorridas almacena en posiciones U\+L\+T\+I\+MO M\+E\+D\+IO o P\+R\+I\+M\+E\+RO para indicar a cada caballo en que parte de la carrera se encuentra 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em distancia\+\_\+recorrida} & array de enteros que contiene la distancia recorrida por cada caballo \\
+\hline
+{\em posiciones} & array de entero donde se almacena la posicion que ocupa cada caballo en la carrera \\
+\hline
+{\em num\+\_\+caballos} & entero que indica cuantos caballos disputan la carrera \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{carrera_8c_a832753956e7933906de7ce846c24a1c6}\label{carrera_8c_a832753956e7933906de7ce846c24a1c6}} 
+\index{carrera.\+c@{carrera.\+c}!ronda\+\_\+caballo@{ronda\+\_\+caballo}}
+\index{ronda\+\_\+caballo@{ronda\+\_\+caballo}!carrera.\+c@{carrera.\+c}}
+\subsubsection{\texorpdfstring{ronda\+\_\+caballo()}{ronda\_caballo()}}
+{\footnotesize\ttfamily void ronda\+\_\+caballo (\begin{DoxyParamCaption}\item[{int}]{ronda,  }\item[{int}]{pipe\+\_\+escritura,  }\item[{int}]{pipe\+\_\+lectura,  }\item[{int}]{num\+\_\+semaforo }\end{DoxyParamCaption})}
+
+
+
+La funcion \hyperlink{carrera_8c_a832753956e7933906de7ce846c24a1c6}{ronda\+\_\+caballo()} simula una ronda de la carrera, generando una tirada y comunicandose con el proceso principal para que registre dicho avance y actualice las posiciones. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em ronda} & entero que indica cuantas rondas ha habido hasta ahora \\
+\hline
+{\em pipe\+\_\+escritura} & pipe con la que manda informacion al proceso principal \\
+\hline
+{\em pipe\+\_\+lectura} & pipe con la que recibe informacion del proceso principal \\
+\hline
+{\em num\+\_\+semaforo} & identificador del semaforo usado para coordinarse con el p. principal \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{carrera_8c_a365922600e1bc8e96f3950d41d163914}\label{carrera_8c_a365922600e1bc8e96f3950d41d163914}} 
+\index{carrera.\+c@{carrera.\+c}!ronda\+\_\+principal@{ronda\+\_\+principal}}
+\index{ronda\+\_\+principal@{ronda\+\_\+principal}!carrera.\+c@{carrera.\+c}}
+\subsubsection{\texorpdfstring{ronda\+\_\+principal()}{ronda\_principal()}}
+{\footnotesize\ttfamily int ronda\+\_\+principal (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+caballos,  }\item[{int}]{ronda,  }\item[{int $\ast$$\ast$}]{pipe\+\_\+lectura,  }\item[{int $\ast$$\ast$}]{pipe\+\_\+escritura,  }\item[{int $\ast$}]{distancia\+\_\+recorrida,  }\item[{int}]{long\+\_\+carrera }\end{DoxyParamCaption})}
+
+
+
+la funcion \hyperlink{carrera_8c_a365922600e1bc8e96f3950d41d163914}{ronda\+\_\+principal()} simula una ronda del controlador de la carrera, recibiendo las tiradas de los caballos, actualizando sus posiciones y enviandoles de nuevo su posicion para la siguiente ronda. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em num\+\_\+caballos} & entero con el numero de caballos que participan en la carrera \\
+\hline
+{\em ronda} & entero que indica cuantas rondas ha habido hasta ahora \\
+\hline
+{\em pipe\+\_\+lectura} & array de pipes usadas para recibir informacion de los hijos \\
+\hline
+{\em pipe\+\_\+escritura} & array de pipes usadas para enviar informacion a los hijos \\
+\hline
+{\em distancia\+\_\+recorrida} & array de enteros donde se almacena la distancia recorrida por cada caballo \\
+\hline
+{\em long\+\_\+carrera} & entero que indica la distancia que requiere recorrer un caballo para ganar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+int con la flag carrera terminada. (0 mientras este en curso y 1 al terminar) 
+\end{DoxyReturn}

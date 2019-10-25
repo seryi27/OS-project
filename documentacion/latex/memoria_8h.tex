@@ -1,0 +1,110 @@
+\hypertarget{memoria_8h}{}\section{Referencia del Archivo memoria.\+h}
+\label{memoria_8h}\index{memoria.\+h@{memoria.\+h}}
+
+
+En este archivo .h se declaran todas las funciones relacionadas con la creacion de memoria compartida del programa. Dado que utilizamos fuertemente este modo de comunicacion, tenemos varias funciones, una para cada estructura de datos que compartimos.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Dependencia gráfica adjunta para memoria.\+h\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{memoria_8h_a904439311e088e72e8f0d95d0baa3129}{crear\+\_\+memoria} ()
+\begin{DoxyCompactList}\small\item\em funcion principal que genera toda la memoria compartida que el programa utiliza, llamando a cada una de las funciones definidas debajo de forma controlada. \end{DoxyCompactList}\item 
+int \hyperlink{memoria_8h_aef9b049ca19c1de11e61b578e5d7ea9f}{crear\+\_\+memoria\+\_\+cotizacion} ()
+\begin{DoxyCompactList}\small\item\em genera una zona de memoria compartida para un array de doubles que almacenan la cotizacion de cada caballo en cada momento. \end{DoxyCompactList}\item 
+int \hyperlink{memoria_8h_a3857c6bfe2ac91c072191128fa560e88}{crear\+\_\+memoria\+\_\+carrera} ()
+\begin{DoxyCompactList}\small\item\em genera la zona de memoria compartida de la informacion de la carrera, que almacena la evolucion de la carrera, guardando la distancia, el avance y la posicion de cada caballo. \end{DoxyCompactList}\item 
+int \hyperlink{memoria_8h_a6fba39cab25486e680ca482572aa8dff}{crear\+\_\+memoria\+\_\+flags} ()
+\begin{DoxyCompactList}\small\item\em genera la zona de memoria compartida de las flags(dos enteros que permiten a todo proceso que tenga acceso a ellas el punto de ejecucion del proceso principal) \end{DoxyCompactList}\item 
+int \hyperlink{memoria_8h_aec1b7d9891922b0afc57b75d83700ffd}{crear\+\_\+memoria\+\_\+apuestas} ()
+\begin{DoxyCompactList}\small\item\em genera la zona de memoria compartida de las apuestas (una matriz que relaciona apostadores y caballos a traves del dinero total que el apostador ha apostado a cada uno) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+En este archivo .h se declaran todas las funciones relacionadas con la creacion de memoria compartida del programa. Dado que utilizamos fuertemente este modo de comunicacion, tenemos varias funciones, una para cada estructura de datos que compartimos. 
+
+\begin{DoxyAuthor}{Autor}
+Miguel Baquedano \href{mailto:miguel.baquedano@estudiante.uam.es}{\tt miguel.\+baquedano@estudiante.\+uam.\+es} 
+
+Sergio Cordero \href{mailto:sergio.cordero@estudiante.uam.es}{\tt sergio.\+cordero@estudiante.\+uam.\+es} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+05-\/05-\/2018 
+\end{DoxyDate}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{memoria_8h_a904439311e088e72e8f0d95d0baa3129}\label{memoria_8h_a904439311e088e72e8f0d95d0baa3129}} 
+\index{memoria.\+h@{memoria.\+h}!crear\+\_\+memoria@{crear\+\_\+memoria}}
+\index{crear\+\_\+memoria@{crear\+\_\+memoria}!memoria.\+h@{memoria.\+h}}
+\subsubsection{\texorpdfstring{crear\+\_\+memoria()}{crear\_memoria()}}
+{\footnotesize\ttfamily int crear\+\_\+memoria (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funcion principal que genera toda la memoria compartida que el programa utiliza, llamando a cada una de las funciones definidas debajo de forma controlada. 
+
+\begin{DoxyReturn}{Devuelve}
+0 o -\/1 en funcion de si ejecuta correcta o incorrectamente 
+\end{DoxyReturn}
+\mbox{\Hypertarget{memoria_8h_aec1b7d9891922b0afc57b75d83700ffd}\label{memoria_8h_aec1b7d9891922b0afc57b75d83700ffd}} 
+\index{memoria.\+h@{memoria.\+h}!crear\+\_\+memoria\+\_\+apuestas@{crear\+\_\+memoria\+\_\+apuestas}}
+\index{crear\+\_\+memoria\+\_\+apuestas@{crear\+\_\+memoria\+\_\+apuestas}!memoria.\+h@{memoria.\+h}}
+\subsubsection{\texorpdfstring{crear\+\_\+memoria\+\_\+apuestas()}{crear\_memoria\_apuestas()}}
+{\footnotesize\ttfamily int crear\+\_\+memoria\+\_\+apuestas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+genera la zona de memoria compartida de las apuestas (una matriz que relaciona apostadores y caballos a traves del dinero total que el apostador ha apostado a cada uno) 
+
+\begin{DoxyReturn}{Devuelve}
+0 o -\/1 en funcion de si ejecuta correcta o incorrectamente 
+\end{DoxyReturn}
+\mbox{\Hypertarget{memoria_8h_a3857c6bfe2ac91c072191128fa560e88}\label{memoria_8h_a3857c6bfe2ac91c072191128fa560e88}} 
+\index{memoria.\+h@{memoria.\+h}!crear\+\_\+memoria\+\_\+carrera@{crear\+\_\+memoria\+\_\+carrera}}
+\index{crear\+\_\+memoria\+\_\+carrera@{crear\+\_\+memoria\+\_\+carrera}!memoria.\+h@{memoria.\+h}}
+\subsubsection{\texorpdfstring{crear\+\_\+memoria\+\_\+carrera()}{crear\_memoria\_carrera()}}
+{\footnotesize\ttfamily int crear\+\_\+memoria\+\_\+carrera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+genera la zona de memoria compartida de la informacion de la carrera, que almacena la evolucion de la carrera, guardando la distancia, el avance y la posicion de cada caballo. 
+
+\begin{DoxyReturn}{Devuelve}
+0 o -\/1 en funcion de si ejecuta correcta o incorrectamente 
+\end{DoxyReturn}
+\mbox{\Hypertarget{memoria_8h_aef9b049ca19c1de11e61b578e5d7ea9f}\label{memoria_8h_aef9b049ca19c1de11e61b578e5d7ea9f}} 
+\index{memoria.\+h@{memoria.\+h}!crear\+\_\+memoria\+\_\+cotizacion@{crear\+\_\+memoria\+\_\+cotizacion}}
+\index{crear\+\_\+memoria\+\_\+cotizacion@{crear\+\_\+memoria\+\_\+cotizacion}!memoria.\+h@{memoria.\+h}}
+\subsubsection{\texorpdfstring{crear\+\_\+memoria\+\_\+cotizacion()}{crear\_memoria\_cotizacion()}}
+{\footnotesize\ttfamily int crear\+\_\+memoria\+\_\+cotizacion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+genera una zona de memoria compartida para un array de doubles que almacenan la cotizacion de cada caballo en cada momento. 
+
+\begin{DoxyReturn}{Devuelve}
+0 o -\/1 en funcion de si ejecuta correcta o incorrectamente 
+\end{DoxyReturn}
+\mbox{\Hypertarget{memoria_8h_a6fba39cab25486e680ca482572aa8dff}\label{memoria_8h_a6fba39cab25486e680ca482572aa8dff}} 
+\index{memoria.\+h@{memoria.\+h}!crear\+\_\+memoria\+\_\+flags@{crear\+\_\+memoria\+\_\+flags}}
+\index{crear\+\_\+memoria\+\_\+flags@{crear\+\_\+memoria\+\_\+flags}!memoria.\+h@{memoria.\+h}}
+\subsubsection{\texorpdfstring{crear\+\_\+memoria\+\_\+flags()}{crear\_memoria\_flags()}}
+{\footnotesize\ttfamily int crear\+\_\+memoria\+\_\+flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+genera la zona de memoria compartida de las flags(dos enteros que permiten a todo proceso que tenga acceso a ellas el punto de ejecucion del proceso principal) 
+
+\begin{DoxyReturn}{Devuelve}
+0 o -\/1 en funcion de si ejecuta correcta o incorrectamente 
+\end{DoxyReturn}

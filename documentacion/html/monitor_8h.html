@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Práctica1SOper: Referencia del Archivo monitor.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Práctica1SOper
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Estructuras de datos</a> &#124;
+<a href="#func-members">Funciones</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo monitor.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>En este archivo .h se declaran todas las funciones relacionadas con el monitor de la carrera. Incluye una funcion principal <a class="el" href="monitor_8h.html#a3cb1bafc7468292200262cebb1bdbc37" title="funcion principal del monitor. Simplemente ejecuta por orden las funciones siguientes. Comienza ejecutando monitor_previa() hasta que comienza la carrera. Durante la carrera espera por las señales que recibe de carrera para ir imprimiendo las posiciones de los caballos a traves de la funcion manejador monitor_carrera(). Una vez finalizada muestra los resultados de la carrera con monitor_postcarrera() y, finalmente, justo antes de acabar utiliza report_completo() para mostrar toda la informacion de la carrera de forma detallada. ">proceso_monitor()</a> que organiza temporalmente las llamadas a las otras funciones de monitor. Tambien incluye una funcion para cada etapa de la carrera (<a class="el" href="monitor_8h.html#ab8cef6bd968b5f5abe119e64f2801815" title="Utiliza memoria recibida para acceder a las cotizaciones de cada caballo y las imprime cada segundo j...">monitor_previa()</a>, que imprime el tiempo restante y las cotizaciones actuales de los caballos, <a class="el" href="monitor_8h.html#a811a8247b498e49c0d5f4e18068a4ffe" title="funcion manejador de señales que es ejecutada al recibir señales desde el proceso carrera...">monitor_carrera()</a>, que va imprimiendo las posiciones de cada caballo en cada ronda de la carrera y <a class="el" href="monitor_8h.html#a417bd4a1236f8be02cd7ef58176eb242" title="Muestra los resultados de la carrera y de las apuestas (los caballos ordenados por posicion final y l...">monitor_postcarrera()</a>, que muestra las posiciones finales de los caballos y los apostadores que mas han ganado). Finalmente incluye <a class="el" href="monitor_8h.html#a52d83da67e4eba99b5ecf4f11f22f118" title="funcion manejador que se ejecuta justo antes de terminar la ejecucion del programa y que imprime un i...">report_completo()</a>, una funcion llamada antes de terminar el programa para mostrar por pantalla un informe completo de toda la informacion relevante de la carrera.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Dependencia gráfica adjunta para monitor.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="monitor_8h__incl.png" border="0" usemap="#monitor_8h" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:</div>
+<div class="dyncontent">
+<div class="center"><img src="monitor_8h__dep__incl.png" border="0" usemap="#monitor_8hdep" alt=""/></div>
+<!-- MAP 1 -->
+</div>
+</div>
+<p><a href="monitor_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structresultado__caballo.html">resultado_caballo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structganadores.html">ganadores</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a3cb1bafc7468292200262cebb1bdbc37"><td class="memItemLeft" align="right" valign="top"><a id="a3cb1bafc7468292200262cebb1bdbc37"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monitor_8h.html#a3cb1bafc7468292200262cebb1bdbc37">proceso_monitor</a> ()</td></tr>
+<tr class="memdesc:a3cb1bafc7468292200262cebb1bdbc37"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion principal del monitor. Simplemente ejecuta por orden las funciones siguientes. Comienza ejecutando <a class="el" href="monitor_8h.html#ab8cef6bd968b5f5abe119e64f2801815" title="Utiliza memoria recibida para acceder a las cotizaciones de cada caballo y las imprime cada segundo j...">monitor_previa()</a> hasta que comienza la carrera. Durante la carrera espera por las señales que recibe de carrera para ir imprimiendo las posiciones de los caballos a traves de la funcion manejador <a class="el" href="monitor_8h.html#a811a8247b498e49c0d5f4e18068a4ffe" title="funcion manejador de señales que es ejecutada al recibir señales desde el proceso carrera...">monitor_carrera()</a>. Una vez finalizada muestra los resultados de la carrera con <a class="el" href="monitor_8h.html#a417bd4a1236f8be02cd7ef58176eb242" title="Muestra los resultados de la carrera y de las apuestas (los caballos ordenados por posicion final y l...">monitor_postcarrera()</a> y, finalmente, justo antes de acabar utiliza <a class="el" href="monitor_8h.html#a52d83da67e4eba99b5ecf4f11f22f118" title="funcion manejador que se ejecuta justo antes de terminar la ejecucion del programa y que imprime un i...">report_completo()</a> para mostrar toda la informacion de la carrera de forma detallada. <br /></td></tr>
+<tr class="separator:a3cb1bafc7468292200262cebb1bdbc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8cef6bd968b5f5abe119e64f2801815"><td class="memItemLeft" align="right" valign="top"><a id="ab8cef6bd968b5f5abe119e64f2801815"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monitor_8h.html#ab8cef6bd968b5f5abe119e64f2801815">monitor_previa</a> ()</td></tr>
+<tr class="memdesc:ab8cef6bd968b5f5abe119e64f2801815"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utiliza memoria recibida para acceder a las cotizaciones de cada caballo y las imprime cada segundo junto con un contador del tiempo restante para empezar. <br /></td></tr>
+<tr class="separator:ab8cef6bd968b5f5abe119e64f2801815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a811a8247b498e49c0d5f4e18068a4ffe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monitor_8h.html#a811a8247b498e49c0d5f4e18068a4ffe">monitor_carrera</a> (int sig)</td></tr>
+<tr class="memdesc:a811a8247b498e49c0d5f4e18068a4ffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion manejador de señales que es ejecutada al recibir señales desde el proceso carrera. De forma organizada gracias a usar señales imprime en cada ronda la distancia total recorrida por cada caballo y la distancia recorrida en dicha ronda.  <a href="#a811a8247b498e49c0d5f4e18068a4ffe">Más...</a><br /></td></tr>
+<tr class="separator:a811a8247b498e49c0d5f4e18068a4ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a417bd4a1236f8be02cd7ef58176eb242"><td class="memItemLeft" align="right" valign="top"><a id="a417bd4a1236f8be02cd7ef58176eb242"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monitor_8h.html#a417bd4a1236f8be02cd7ef58176eb242">monitor_postcarrera</a> ()</td></tr>
+<tr class="memdesc:a417bd4a1236f8be02cd7ef58176eb242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra los resultados de la carrera y de las apuestas (los caballos ordenados por posicion final y los 10 apostadores que mas dinero han ganado). Se ejecuta una vez finalizada la carrera. <br /></td></tr>
+<tr class="separator:a417bd4a1236f8be02cd7ef58176eb242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52d83da67e4eba99b5ecf4f11f22f118"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monitor_8h.html#a52d83da67e4eba99b5ecf4f11f22f118">report_completo</a> (int sig)</td></tr>
+<tr class="memdesc:a52d83da67e4eba99b5ecf4f11f22f118"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion manejador que se ejecuta justo antes de terminar la ejecucion del programa y que imprime un informe completo de la carrera. Este informe incluye un historial de todas las apuestas por orden de llegada al sistema, el resultado de la carrera (los caballos organizados por distancia recorrida en orden descendente) y el resultado de las apuestas de cada apostador.  <a href="#a52d83da67e4eba99b5ecf4f11f22f118">Más...</a><br /></td></tr>
+<tr class="separator:a52d83da67e4eba99b5ecf4f11f22f118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d2a7d2a12173bdf7ebb62ae0fbf50f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monitor_8h.html#a2d2a7d2a12173bdf7ebb62ae0fbf50f6">ordenar_caballos</a> (<a class="el" href="structinfo__carrera.html">info_carrera</a> *carrera, <a class="el" href="structresultado__caballo.html">resultado_caballo</a> *resultado)</td></tr>
+<tr class="memdesc:a2d2a7d2a12173bdf7ebb62ae0fbf50f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que devuelve en resultado el orden de finalizacion de los caballos en orden descendente (el primero se encuentra al final del array).  <a href="#a2d2a7d2a12173bdf7ebb62ae0fbf50f6">Más...</a><br /></td></tr>
+<tr class="separator:a2d2a7d2a12173bdf7ebb62ae0fbf50f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab944f6c4e3b88464c9e9cf1253e5a2f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monitor_8h.html#ab944f6c4e3b88464c9e9cf1253e5a2f9">ordenar_apostadores</a> (<a class="el" href="structinfo__apuestas.html">info_apuestas</a> *apuestas, <a class="el" href="structganadores.html">ganadores</a> *apostadores_ganadores)</td></tr>
+<tr class="memdesc:ab944f6c4e3b88464c9e9cf1253e5a2f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que utilizando la memoria compartida apuestas guarda en apostadores_ganadores los apostadores ordenados por ganancias en orden ascendente (los que mas ganan van los ultimos)  <a href="#ab944f6c4e3b88464c9e9cf1253e5a2f9">Más...</a><br /></td></tr>
+<tr class="separator:ab944f6c4e3b88464c9e9cf1253e5a2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad070c3c53065c891e52a402957182744"><td class="memItemLeft" align="right" valign="top"><a id="ad070c3c53065c891e52a402957182744"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>informacion_apostadores</b> (<a class="el" href="structinfo__apuestas.html">info_apuestas</a> *apuestas, <a class="el" href="structganadores.html">ganadores</a> *apostadores_ganadores)</td></tr>
+<tr class="separator:ad070c3c53065c891e52a402957182744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>En este archivo .h se declaran todas las funciones relacionadas con el monitor de la carrera. Incluye una funcion principal <a class="el" href="monitor_8h.html#a3cb1bafc7468292200262cebb1bdbc37" title="funcion principal del monitor. Simplemente ejecuta por orden las funciones siguientes. Comienza ejecutando monitor_previa() hasta que comienza la carrera. Durante la carrera espera por las señales que recibe de carrera para ir imprimiendo las posiciones de los caballos a traves de la funcion manejador monitor_carrera(). Una vez finalizada muestra los resultados de la carrera con monitor_postcarrera() y, finalmente, justo antes de acabar utiliza report_completo() para mostrar toda la informacion de la carrera de forma detallada. ">proceso_monitor()</a> que organiza temporalmente las llamadas a las otras funciones de monitor. Tambien incluye una funcion para cada etapa de la carrera (<a class="el" href="monitor_8h.html#ab8cef6bd968b5f5abe119e64f2801815" title="Utiliza memoria recibida para acceder a las cotizaciones de cada caballo y las imprime cada segundo j...">monitor_previa()</a>, que imprime el tiempo restante y las cotizaciones actuales de los caballos, <a class="el" href="monitor_8h.html#a811a8247b498e49c0d5f4e18068a4ffe" title="funcion manejador de señales que es ejecutada al recibir señales desde el proceso carrera...">monitor_carrera()</a>, que va imprimiendo las posiciones de cada caballo en cada ronda de la carrera y <a class="el" href="monitor_8h.html#a417bd4a1236f8be02cd7ef58176eb242" title="Muestra los resultados de la carrera y de las apuestas (los caballos ordenados por posicion final y l...">monitor_postcarrera()</a>, que muestra las posiciones finales de los caballos y los apostadores que mas han ganado). Finalmente incluye <a class="el" href="monitor_8h.html#a52d83da67e4eba99b5ecf4f11f22f118" title="funcion manejador que se ejecuta justo antes de terminar la ejecucion del programa y que imprime un i...">report_completo()</a>, una funcion llamada antes de terminar el programa para mostrar por pantalla un informe completo de toda la informacion relevante de la carrera. </p>
+<dl class="section author"><dt>Autor</dt><dd>Miguel Baquedano <a href="#" onclick="location.href='mai'+'lto:'+'mig'+'ue'+'l.b'+'aq'+'ued'+'an'+'o@e'+'st'+'udi'+'an'+'te.'+'ua'+'m.e'+'s'; return false;">migue<span style="display: none;">.nosp@m.</span>l.ba<span style="display: none;">.nosp@m.</span>queda<span style="display: none;">.nosp@m.</span>no@e<span style="display: none;">.nosp@m.</span>studi<span style="display: none;">.nosp@m.</span>ante<span style="display: none;">.nosp@m.</span>.uam.<span style="display: none;">.nosp@m.</span>es</a> </dd>
+<dd>
+Sergio Cordero <a href="#" onclick="location.href='mai'+'lto:'+'ser'+'gi'+'o.c'+'or'+'der'+'o@'+'est'+'ud'+'ian'+'te'+'.ua'+'m.'+'es'; return false;">sergi<span style="display: none;">.nosp@m.</span>o.co<span style="display: none;">.nosp@m.</span>rdero<span style="display: none;">.nosp@m.</span>@est<span style="display: none;">.nosp@m.</span>udian<span style="display: none;">.nosp@m.</span>te.u<span style="display: none;">.nosp@m.</span>am.es</a> </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>02-04-2018 </dd></dl>
+</div><h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a811a8247b498e49c0d5f4e18068a4ffe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a811a8247b498e49c0d5f4e18068a4ffe">&#9670;&nbsp;</a></span>monitor_carrera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void monitor_carrera </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sig</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion manejador de señales que es ejecutada al recibir señales desde el proceso carrera. De forma organizada gracias a usar señales imprime en cada ronda la distancia total recorrida por cada caballo y la distancia recorrida en dicha ronda. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sig</td><td>entero que representa la señal recibida que activa dicho manejador. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab944f6c4e3b88464c9e9cf1253e5a2f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab944f6c4e3b88464c9e9cf1253e5a2f9">&#9670;&nbsp;</a></span>ordenar_apostadores()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ordenar_apostadores </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structinfo__apuestas.html">info_apuestas</a> *&#160;</td>
+          <td class="paramname"><em>apuestas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structganadores.html">ganadores</a> *&#160;</td>
+          <td class="paramname"><em>apostadores_ganadores</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion que utilizando la memoria compartida apuestas guarda en apostadores_ganadores los apostadores ordenados por ganancias en orden ascendente (los que mas ganan van los ultimos) </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">apuestas</td><td>array de estructuras a <a class="el" href="structinfo__apuestas.html">info_apuestas</a> que usaremos para acceder a la matriz de apuestas y al array de ganadores </td></tr>
+    <tr><td class="paramname">apostadores_ganadores</td><td>array de estructuras a ganadores donde guardamos los apostadores ordenados por cuanto dinero han ganado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2d2a7d2a12173bdf7ebb62ae0fbf50f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d2a7d2a12173bdf7ebb62ae0fbf50f6">&#9670;&nbsp;</a></span>ordenar_caballos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ordenar_caballos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structinfo__carrera.html">info_carrera</a> *&#160;</td>
+          <td class="paramname"><em>carrera</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structresultado__caballo.html">resultado_caballo</a> *&#160;</td>
+          <td class="paramname"><em>resultado</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion que devuelve en resultado el orden de finalizacion de los caballos en orden descendente (el primero se encuentra al final del array). </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">carrera</td><td>array de estructuras <a class="el" href="structinfo__carrera.html">info_carrera</a> que usaremos para acceder a la distancia recorrida por cada caballo </td></tr>
+    <tr><td class="paramname">resultado</td><td>array de estructuras <a class="el" href="structresultado__caballo.html">resultado_caballo</a> (que guarda cada caballo junto con la distancia total) que se devolvera ordenado por distancia. que ha recorrido. Sera </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a52d83da67e4eba99b5ecf4f11f22f118"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52d83da67e4eba99b5ecf4f11f22f118">&#9670;&nbsp;</a></span>report_completo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void report_completo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sig</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion manejador que se ejecuta justo antes de terminar la ejecucion del programa y que imprime un informe completo de la carrera. Este informe incluye un historial de todas las apuestas por orden de llegada al sistema, el resultado de la carrera (los caballos organizados por distancia recorrida en orden descendente) y el resultado de las apuestas de cada apostador. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sig</td><td>entero que indica la señal que ha producido la ejecucion de este manejador </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Sábado, 26 de Octubre de 2019 01:57:49 para Práctica1SOper por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

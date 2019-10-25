@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Práctica1SOper: Referencia del Archivo carrera.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Práctica1SOper
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo carrera.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Este es el archivo principal del programa. Contiene el main y las funciones principales de la ejecucion del mismo. Organiza las ejecuciones de los diversos procesos que actuan en la ejecucion del programa, ejecuta el proceso principal (la carrera propiamente dicha) y controla la terminacion de todos los procesos para que el programa termine de forma controlada.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;sys/wait.h&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;sys/ipc.h&gt;</code><br />
+<code>#include &lt;sys/sem.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;sys/shm.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;pthread.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;sys/msg.h&gt;</code><br />
+<code>#include &lt;sys/stat.h&gt;</code><br />
+<code>#include &lt;fcntl.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="estructuras_8h_source.html">estructuras.h</a>&quot;</code><br />
+<code>#include &quot;assert.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="caballo_8h_source.html">caballo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="aleat__num_8h_source.html">aleat_num.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="semaforos_8h_source.html">semaforos.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="monitor_8h_source.html">monitor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gestor__apuestas_8h_source.html">gestor_apuestas.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mensaje_8h_source.html">mensaje.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="memoria_8h_source.html">memoria.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="apostador_8h_source.html">apostador.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Dependencia gráfica adjunta para carrera.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="carrera_8c__incl.png" border="0" usemap="#carrera_8c" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a68c15c5fb7f7c6f707903e6a46ab0557"><td class="memItemLeft" align="right" valign="top"><a id="a68c15c5fb7f7c6f707903e6a46ab0557"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FILEKEY</b>&#160;&#160;&#160;&quot;/bin/cat&quot;</td></tr>
+<tr class="separator:a68c15c5fb7f7c6f707903e6a46ab0557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ae9d53f33f46cfcfcb9736e6351452a"><td class="memItemLeft" align="right" valign="top"><a id="a8ae9d53f33f46cfcfcb9736e6351452a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>KEY</b>&#160;&#160;&#160;1304</td></tr>
+<tr class="separator:a8ae9d53f33f46cfcfcb9736e6351452a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0139008fdda107456f13f837872b410"><td class="memItemLeft" align="right" valign="top"><a id="ab0139008fdda107456f13f837872b410"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PATH</b>&#160;&#160;&#160;&quot;historial.txt&quot;</td></tr>
+<tr class="separator:ab0139008fdda107456f13f837872b410"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ab548cd3742b9a8aa22a847514af36fea"><td class="memItemLeft" align="right" valign="top"><a id="ab548cd3742b9a8aa22a847514af36fea"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>fin_carrera</b> (int sig)</td></tr>
+<tr class="separator:ab548cd3742b9a8aa22a847514af36fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b5ba3652d4ea6955ada5d71319fcb8d"><td class="memItemLeft" align="right" valign="top"><a id="a1b5ba3652d4ea6955ada5d71319fcb8d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>fin_programa</b> (int sig)</td></tr>
+<tr class="separator:a1b5ba3652d4ea6955ada5d71319fcb8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a10b987e49c732e7af2647b5f202a42"><td class="memItemLeft" align="right" valign="top"><a id="a6a10b987e49c732e7af2647b5f202a42"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>inicio_carrera</b> (int sig)</td></tr>
+<tr class="separator:a6a10b987e49c732e7af2647b5f202a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a832753956e7933906de7ce846c24a1c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carrera_8c.html#a832753956e7933906de7ce846c24a1c6">ronda_caballo</a> (int ronda, int pipe_escritura, int pipe_lectura, int num_semaforo)</td></tr>
+<tr class="memdesc:a832753956e7933906de7ce846c24a1c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">La funcion <a class="el" href="carrera_8c.html#a832753956e7933906de7ce846c24a1c6" title="La funcion ronda_caballo() simula una ronda de la carrera, generando una tirada y comunicandose con e...">ronda_caballo()</a> simula una ronda de la carrera, generando una tirada y comunicandose con el proceso principal para que registre dicho avance y actualice las posiciones.  <a href="#a832753956e7933906de7ce846c24a1c6">Más...</a><br /></td></tr>
+<tr class="separator:a832753956e7933906de7ce846c24a1c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a365922600e1bc8e96f3950d41d163914"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carrera_8c.html#a365922600e1bc8e96f3950d41d163914">ronda_principal</a> (int num_caballos, int ronda, int **pipe_lectura, int **pipe_escritura, int *distancia_recorrida, int long_carrera)</td></tr>
+<tr class="memdesc:a365922600e1bc8e96f3950d41d163914"><td class="mdescLeft">&#160;</td><td class="mdescRight">la funcion <a class="el" href="carrera_8c.html#a365922600e1bc8e96f3950d41d163914" title="la funcion ronda_principal() simula una ronda del controlador de la carrera, recibiendo las tiradas d...">ronda_principal()</a> simula una ronda del controlador de la carrera, recibiendo las tiradas de los caballos, actualizando sus posiciones y enviandoles de nuevo su posicion para la siguiente ronda.  <a href="#a365922600e1bc8e96f3950d41d163914">Más...</a><br /></td></tr>
+<tr class="separator:a365922600e1bc8e96f3950d41d163914"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d980f59125ca72f46ca27b10a3825c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carrera_8c.html#a6d980f59125ca72f46ca27b10a3825c3">get_posiciones</a> (int *distancia_recorrida, int *posiciones, int num_caballos)</td></tr>
+<tr class="memdesc:a6d980f59125ca72f46ca27b10a3825c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que dado el array de distancias recorridas almacena en posiciones ULTIMO MEDIO o PRIMERO para indicar a cada caballo en que parte de la carrera se encuentra  <a href="#a6d980f59125ca72f46ca27b10a3825c3">Más...</a><br /></td></tr>
+<tr class="separator:a6d980f59125ca72f46ca27b10a3825c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a414427533937a8979e22783183888e19"><td class="memItemLeft" align="right" valign="top"><a id="a414427533937a8979e22783183888e19"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>crear_semaforos</b> (int num_caballos)</td></tr>
+<tr class="separator:a414427533937a8979e22783183888e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top"><a id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, char *argv[])</td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ae260e0a345689d47d879c905c24f7bdb"><td class="memItemLeft" align="right" valign="top"><a id="ae260e0a345689d47d879c905c24f7bdb"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>sem_id_mutex1</b></td></tr>
+<tr class="separator:ae260e0a345689d47d879c905c24f7bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d62a8db549549409ab56a2e1272ed36"><td class="memItemLeft" align="right" valign="top"><a id="a6d62a8db549549409ab56a2e1272ed36"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>sem_id_mutex2</b></td></tr>
+<tr class="separator:a6d62a8db549549409ab56a2e1272ed36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d142b95e39b9f3ccc223ad780f1c677"><td class="memItemLeft" align="right" valign="top"><a id="a9d142b95e39b9f3ccc223ad780f1c677"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>sem_id_caballos</b></td></tr>
+<tr class="separator:a9d142b95e39b9f3ccc223ad780f1c677"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99471648bee8715391ce82ef5034f38d"><td class="memItemLeft" align="right" valign="top"><a id="a99471648bee8715391ce82ef5034f38d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>sem_id_info_carrera</b></td></tr>
+<tr class="separator:a99471648bee8715391ce82ef5034f38d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9de9817e5d7c846fd151de6a90e281e3"><td class="memItemLeft" align="right" valign="top"><a id="a9de9817e5d7c846fd151de6a90e281e3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>sem_id_mutex_apuesta</b></td></tr>
+<tr class="separator:a9de9817e5d7c846fd151de6a90e281e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e4cb2b702a5e750bdddfdc8b732c980"><td class="memItemLeft" align="right" valign="top"><a id="a3e4cb2b702a5e750bdddfdc8b732c980"></a>
+int *&#160;</td><td class="memItemRight" valign="bottom"><b>active</b></td></tr>
+<tr class="separator:a3e4cb2b702a5e750bdddfdc8b732c980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59e3c6b7de336a8c2ea29343d0d99beb"><td class="memItemLeft" align="right" valign="top"><a id="a59e3c6b7de336a8c2ea29343d0d99beb"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>num_caballos</b></td></tr>
+<tr class="separator:a59e3c6b7de336a8c2ea29343d0d99beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab3c85d32931a4736b046b353a4f7d24"><td class="memItemLeft" align="right" valign="top"><a id="aab3c85d32931a4736b046b353a4f7d24"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>num_apostadores</b></td></tr>
+<tr class="separator:aab3c85d32931a4736b046b353a4f7d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a554bdf03ae4f8480bddb761bd7c03b53"><td class="memItemLeft" align="right" valign="top"><a id="a554bdf03ae4f8480bddb761bd7c03b53"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>id_zone</b></td></tr>
+<tr class="separator:a554bdf03ae4f8480bddb761bd7c03b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f8474a9da1ca9401dba3eed31ebec53"><td class="memItemLeft" align="right" valign="top"><a id="a7f8474a9da1ca9401dba3eed31ebec53"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>id_zone_carrera</b></td></tr>
+<tr class="separator:a7f8474a9da1ca9401dba3eed31ebec53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfbafc882e4572d22b1ff62bc488cb86"><td class="memItemLeft" align="right" valign="top"><a id="acfbafc882e4572d22b1ff62bc488cb86"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>id_zone_flags</b></td></tr>
+<tr class="separator:acfbafc882e4572d22b1ff62bc488cb86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc800a8e2e79d3199b41e46887d8c8dc"><td class="memItemLeft" align="right" valign="top"><a id="adc800a8e2e79d3199b41e46887d8c8dc"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>id_zone_apuestas</b></td></tr>
+<tr class="separator:adc800a8e2e79d3199b41e46887d8c8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77a9b46fb7c57dc60d5af1d06ba10562"><td class="memItemLeft" align="right" valign="top"><a id="a77a9b46fb7c57dc60d5af1d06ba10562"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>pid_caballos</b> [10]</td></tr>
+<tr class="separator:a77a9b46fb7c57dc60d5af1d06ba10562"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed37861b69193d37616cef4e9131fc35"><td class="memItemLeft" align="right" valign="top"><a id="aed37861b69193d37616cef4e9131fc35"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>pid_monitor</b></td></tr>
+<tr class="separator:aed37861b69193d37616cef4e9131fc35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a34cf30d287152688326e55fd3b3d4b"><td class="memItemLeft" align="right" valign="top"><a id="a0a34cf30d287152688326e55fd3b3d4b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>pid_apostador</b></td></tr>
+<tr class="separator:a0a34cf30d287152688326e55fd3b3d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a463ebb16baa95c01abebecc758d778a3"><td class="memItemLeft" align="right" valign="top"><a id="a463ebb16baa95c01abebecc758d778a3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>pid_gestor</b></td></tr>
+<tr class="separator:a463ebb16baa95c01abebecc758d778a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1711926ea1e49a9176f7e677b42b5c24"><td class="memItemLeft" align="right" valign="top"><a id="a1711926ea1e49a9176f7e677b42b5c24"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>flag_carrera</b> = 1</td></tr>
+<tr class="separator:a1711926ea1e49a9176f7e677b42b5c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d5c175a99488a6896d8abd414488aba"><td class="memItemLeft" align="right" valign="top"><a id="a1d5c175a99488a6896d8abd414488aba"></a>
+<a class="el" href="structflags__carrera.html">flags_carrera</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>flags</b></td></tr>
+<tr class="separator:a1d5c175a99488a6896d8abd414488aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab033a248088cd9cf85eec6cbd3befc8d"><td class="memItemLeft" align="right" valign="top"><a id="ab033a248088cd9cf85eec6cbd3befc8d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>dinero</b></td></tr>
+<tr class="separator:ab033a248088cd9cf85eec6cbd3befc8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Este es el archivo principal del programa. Contiene el main y las funciones principales de la ejecucion del mismo. Organiza las ejecuciones de los diversos procesos que actuan en la ejecucion del programa, ejecuta el proceso principal (la carrera propiamente dicha) y controla la terminacion de todos los procesos para que el programa termine de forma controlada. </p>
+<dl class="section author"><dt>Autor</dt><dd>Miguel Baquedano <a href="#" onclick="location.href='mai'+'lto:'+'mig'+'ue'+'l.b'+'aq'+'ued'+'an'+'o@e'+'st'+'udi'+'an'+'te.'+'ua'+'m.e'+'s'; return false;">migue<span style="display: none;">.nosp@m.</span>l.ba<span style="display: none;">.nosp@m.</span>queda<span style="display: none;">.nosp@m.</span>no@e<span style="display: none;">.nosp@m.</span>studi<span style="display: none;">.nosp@m.</span>ante<span style="display: none;">.nosp@m.</span>.uam.<span style="display: none;">.nosp@m.</span>es</a> </dd>
+<dd>
+Sergio Cordero <a href="#" onclick="location.href='mai'+'lto:'+'ser'+'gi'+'o.c'+'or'+'der'+'o@'+'est'+'ud'+'ian'+'te'+'.ua'+'m.'+'es'; return false;">sergi<span style="display: none;">.nosp@m.</span>o.co<span style="display: none;">.nosp@m.</span>rdero<span style="display: none;">.nosp@m.</span>@est<span style="display: none;">.nosp@m.</span>udian<span style="display: none;">.nosp@m.</span>te.u<span style="display: none;">.nosp@m.</span>am.es</a> </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>05-05-2018 </dd></dl>
+</div><h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a6d980f59125ca72f46ca27b10a3825c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d980f59125ca72f46ca27b10a3825c3">&#9670;&nbsp;</a></span>get_posiciones()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void get_posiciones </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>distancia_recorrida</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>posiciones</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_caballos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion que dado el array de distancias recorridas almacena en posiciones ULTIMO MEDIO o PRIMERO para indicar a cada caballo en que parte de la carrera se encuentra </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">distancia_recorrida</td><td>array de enteros que contiene la distancia recorrida por cada caballo </td></tr>
+    <tr><td class="paramname">posiciones</td><td>array de entero donde se almacena la posicion que ocupa cada caballo en la carrera </td></tr>
+    <tr><td class="paramname">num_caballos</td><td>entero que indica cuantos caballos disputan la carrera </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a832753956e7933906de7ce846c24a1c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a832753956e7933906de7ce846c24a1c6">&#9670;&nbsp;</a></span>ronda_caballo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ronda_caballo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ronda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pipe_escritura</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pipe_lectura</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_semaforo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>La funcion <a class="el" href="carrera_8c.html#a832753956e7933906de7ce846c24a1c6" title="La funcion ronda_caballo() simula una ronda de la carrera, generando una tirada y comunicandose con e...">ronda_caballo()</a> simula una ronda de la carrera, generando una tirada y comunicandose con el proceso principal para que registre dicho avance y actualice las posiciones. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ronda</td><td>entero que indica cuantas rondas ha habido hasta ahora </td></tr>
+    <tr><td class="paramname">pipe_escritura</td><td>pipe con la que manda informacion al proceso principal </td></tr>
+    <tr><td class="paramname">pipe_lectura</td><td>pipe con la que recibe informacion del proceso principal </td></tr>
+    <tr><td class="paramname">num_semaforo</td><td>identificador del semaforo usado para coordinarse con el p. principal </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a365922600e1bc8e96f3950d41d163914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a365922600e1bc8e96f3950d41d163914">&#9670;&nbsp;</a></span>ronda_principal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ronda_principal </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_caballos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ronda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int **&#160;</td>
+          <td class="paramname"><em>pipe_lectura</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int **&#160;</td>
+          <td class="paramname"><em>pipe_escritura</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>distancia_recorrida</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>long_carrera</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>la funcion <a class="el" href="carrera_8c.html#a365922600e1bc8e96f3950d41d163914" title="la funcion ronda_principal() simula una ronda del controlador de la carrera, recibiendo las tiradas d...">ronda_principal()</a> simula una ronda del controlador de la carrera, recibiendo las tiradas de los caballos, actualizando sus posiciones y enviandoles de nuevo su posicion para la siguiente ronda. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num_caballos</td><td>entero con el numero de caballos que participan en la carrera </td></tr>
+    <tr><td class="paramname">ronda</td><td>entero que indica cuantas rondas ha habido hasta ahora </td></tr>
+    <tr><td class="paramname">pipe_lectura</td><td>array de pipes usadas para recibir informacion de los hijos </td></tr>
+    <tr><td class="paramname">pipe_escritura</td><td>array de pipes usadas para enviar informacion a los hijos </td></tr>
+    <tr><td class="paramname">distancia_recorrida</td><td>array de enteros donde se almacena la distancia recorrida por cada caballo </td></tr>
+    <tr><td class="paramname">long_carrera</td><td>entero que indica la distancia que requiere recorrer un caballo para ganar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>int con la flag carrera terminada. (0 mientras este en curso y 1 al terminar) </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Sábado, 26 de Octubre de 2019 01:57:49 para Práctica1SOper por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -1,0 +1,64 @@
+\hypertarget{caballo_8h}{}\section{Referencia del Archivo caballo.\+h}
+\label{caballo_8h}\index{caballo.\+h@{caballo.\+h}}
+
+
+En este archivo .h se declaran tanto la enumeracion de posiciones de los caballos como las funciones que tienen que ver con los mismos. Esta es la funcion \hyperlink{caballo_8h_a8917ed0883e3c1c2896b7cb611a9f192}{caballo\+\_\+tira\+\_\+dado()} que genera una tirada aleatoria en funcion de la posicion.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Dependencia gráfica adjunta para caballo.\+h\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\subsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{caballo_8h_a4e20a7e3a6ed1481cf9f4087ccb29b2d}\label{caballo_8h_a4e20a7e3a6ed1481cf9f4087ccb29b2d}} 
+enum {\bfseries posicion} \{ {\bfseries U\+L\+T\+I\+MO}, 
+{\bfseries M\+E\+D\+IO}, 
+{\bfseries P\+R\+I\+M\+E\+RO}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{caballo_8h_a8917ed0883e3c1c2896b7cb611a9f192}{caballo\+\_\+tira\+\_\+dado} (int)
+\begin{DoxyCompactList}\small\item\em funcion que dada una posicion de un caballo genera aleatoriamente una tirada que representa cuanto avanza el caballo en dicha ronda. Esta tirada depende de la posicion del caballo en dicho turno. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+En este archivo .h se declaran tanto la enumeracion de posiciones de los caballos como las funciones que tienen que ver con los mismos. Esta es la funcion \hyperlink{caballo_8h_a8917ed0883e3c1c2896b7cb611a9f192}{caballo\+\_\+tira\+\_\+dado()} que genera una tirada aleatoria en funcion de la posicion. 
+
+\begin{DoxyAuthor}{Autor}
+Miguel Baquedano \href{mailto:miguel.baquedano@estudiante.uam.es}{\tt miguel.\+baquedano@estudiante.\+uam.\+es} 
+
+Sergio Cordero \href{mailto:sergio.cordero@estudiante.uam.es}{\tt sergio.\+cordero@estudiante.\+uam.\+es} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+05-\/05-\/2018 
+\end{DoxyDate}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{caballo_8h_a8917ed0883e3c1c2896b7cb611a9f192}\label{caballo_8h_a8917ed0883e3c1c2896b7cb611a9f192}} 
+\index{caballo.\+h@{caballo.\+h}!caballo\+\_\+tira\+\_\+dado@{caballo\+\_\+tira\+\_\+dado}}
+\index{caballo\+\_\+tira\+\_\+dado@{caballo\+\_\+tira\+\_\+dado}!caballo.\+h@{caballo.\+h}}
+\subsubsection{\texorpdfstring{caballo\+\_\+tira\+\_\+dado()}{caballo\_tira\_dado()}}
+{\footnotesize\ttfamily int caballo\+\_\+tira\+\_\+dado (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+funcion que dada una posicion de un caballo genera aleatoriamente una tirada que representa cuanto avanza el caballo en dicha ronda. Esta tirada depende de la posicion del caballo en dicho turno. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em recibe} & un entero que representa la posicion en la que se encuentra el caballo. Este entero puede ser 0,1 o 2, representando cada uno U\+L\+T\+I\+MO, M\+E\+D\+IO o P\+R\+I\+M\+E\+RO. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+entero que representa cuanto avanzara el caballo en dicha ronda. Es un entero aleatorio entre 1 y 6 si va en medio, entre 1 y 7 si va primero y entre 2 y 12 si va ultimo 
+\end{DoxyReturn}
